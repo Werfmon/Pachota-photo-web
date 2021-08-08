@@ -1,5 +1,6 @@
 import React from "react";
 import About from "./components/About";
+import BackButton from "./components/BackButton";
 import Header from "./components/Header";
 
 export default function App() {
@@ -8,9 +9,8 @@ export default function App() {
       <div className="sec-body">
         <Header />
       </div>
-      <div>
       <About />
-      </div>
+      <BackButton />
     </React.Fragment>
   );
 }

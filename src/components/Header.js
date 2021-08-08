@@ -28,17 +28,19 @@ export default function Header() {
         {counter % 2 === 0 ? (
           <header className="burger-header">
             <MyIconButton onClick={openBurgerMenu} className='myIconButton'>
-               <img src={menu} alt="menu icon" />
+              <img src={menu} alt="menu icon" title='menu' />
             </MyIconButton>
             <div className="main-logo-burger">
               <p>PACHOTA PHOTOS</p>
-              <img className="click-about-icon" src={arrow} alt="arrow icon" />
+              <a href='#about'>
+                <img className="click-about-icon" src={arrow} alt="arrow icon" title='arrow icon to slide' />
+              </a>
             </div>
           </header>
         ) : (
           <header className="burger-container">
             <MyIconButton onClick={openBurgerMenu}>
-             <img src={menu} alt="menu icon" />
+              <img src={menu} alt="menu icon" title='menu' />
             </MyIconButton>
             <nav className="burger-navigation">
               <ul className="second-list">
@@ -46,7 +48,7 @@ export default function Header() {
                   <Button className="burger-nav-link">Home</Button>
                 </li>
                 <li>
-                  <Button className="burger-nav-link">O mně</Button>
+                  <Button href='#about' className="burger-nav-link">O mně</Button>
                 </li>
                 <li>
                   <Button className="burger-nav-link">Tvorba</Button>
@@ -71,7 +73,7 @@ export default function Header() {
           </ul>
           <ul className="second-list">
             <li>
-              <Button className="main-nav-link">O mně</Button>
+              <Button href='#about' className="main-nav-link">O mně</Button>
             </li>
             <li>
               <Button className="main-nav-link">Tvorba</Button>
@@ -83,10 +85,12 @@ export default function Header() {
         </nav>
         <div className="main-logo">
           <p>PACHOTA PHOTOS</p>
-          <img className="click-about-icon" src={arrow} alt="arrow icon" />
+          <a href='#about'>
+            <img className="click-about-icon" src={arrow} alt="arrow icon" title='arrow icon to slide' />
+          </a>
         </div>
       </header>
-      
+
     );
   }
 }

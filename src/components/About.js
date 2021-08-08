@@ -2,8 +2,8 @@ import React from "react";
 
 export default function About() {
   return (
-    <main id="main-main">
-      <section className="about-section">
+    <main id='about'>
+      <section className="about-section" >
         <div>
           <p className="para-1">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum odio

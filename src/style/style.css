@@ -4,6 +4,8 @@
 }
 
 * {
+  -webkit-scroll-behavior: smooth;
+  scroll-behavior: smooth;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -23,7 +25,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
-  min-height: 30rem;
+  min-height: 45vw;
 }
 
 .img-fotograf {
@@ -76,9 +78,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -91,7 +93,7 @@ body {
 }
 
 .main-header .main-navigation ul {
-  width: 75vw;
+  width: 50vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,6 +126,7 @@ body {
   color: #fff;
   border: #fff 1px solid;
   width: 8rem;
+  font-size: .8rem;
 }
 
 .main-logo {
@@ -146,6 +149,15 @@ body {
   text-align: center;
   border-inline: #fff solid 4px;
   padding-inline: 0.5rem;
+}
+
+.main-logo a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .click-about-icon {
@@ -261,6 +273,7 @@ main {
 
 main .about-section {
   max-width: 1700px;
+  padding-inline: 5rem;
   margin: 0 auto;
 }
 
@@ -337,21 +350,41 @@ main .about-section div .para-3 {
       align-self: center;
 }
 
+.back-button {
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  width: 100px;
+  height: auto;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  fill: #fff;
+}
+
 @media only screen and (max-width: 700px) and (min-width: 0px) {
   .click-about-icon {
     -ms-flex-item-align: unset;
         -ms-grid-row-align: unset;
         align-self: unset;
   }
+  .back-button {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 0px) {
   main {
     background-color: #111111;
-    padding-inline: 5rem;
   }
   main .about-section div {
     display: block;
   }
   main .about-section div p {
     margin-block: 5rem;
+  }
+  main .about-section div img {
+    max-width: 30rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
