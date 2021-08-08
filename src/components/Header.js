@@ -1,38 +1,37 @@
-import { Button, IconButton } from "@material-ui/core";
 import React, { useState, Fragment } from "react";
 
+import { Button, IconButton, withStyles } from "@material-ui/core";
+
+import arrow from "../img/arrow.svg";
+
+const MyIconButton = withStyles((theme) => ({
+  root: {
+    color: theme.palette.common.white,
+  },
+}))(IconButton);
+
 export default function Header() {
+
   const [state, setState] = useState(window.innerWidth);
-  const [bgStyle, setBgStyle] = useState([]);
   const [counter, setCounter] = useState(0);
-  const [navDisplay, setNavDisplay] = useState("block");
 
   window.addEventListener("resize", () => {
     setState(window.innerWidth);
   });
   function openBurgerMenu() {
-    if (counter % 2 === 0) {
-    } else {
-    }
-    setCounter(counter + 1);
+    setTimeout(() => setCounter(counter + 1), 350);
   }
   if (state <= 700) {
     return (
-      <header className="burger-header">
+      <Fragment>
         {counter % 2 === 0 ? (
-          <Fragment>
-            <img
-              className="img-fotograf"
-              id="burger_img_fotograf"
-              src="https://images.unsplash.com/photo-1625492600712-84d1b02dc263?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
-              alt=""
-            />
-            <IconButton onClick={openBurgerMenu}>
+          <header className="burger-header">
+            <MyIconButton onClick={openBurgerMenu} className='myIconButton'>
               <svg
                 height="100px"
                 viewBox="0 0 28 28"
                 width="100px"
-                id="header-burger-svg"
+                id="header_burger_svg"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -48,11 +47,15 @@ export default function Header() {
                   fill="#fff"
                 />
               </svg>
-            </IconButton>
-          </Fragment>
+            </MyIconButton>
+            <div className="main-logo-burger">
+              <p>PACHOTA PHOTOS</p>
+              <img className="click-about-icon" src={arrow} alt="arrow icon" />
+            </div>
+          </header>
         ) : (
-          <div className='burger-container'>
-            <IconButton onClick={openBurgerMenu}>
+          <header className="burger-container">
+            <MyIconButton onClick={openBurgerMenu}>
               <svg
                 height="100px"
                 viewBox="0 0 28 28"
@@ -73,10 +76,8 @@ export default function Header() {
                   fill="#fff"
                 />
               </svg>
-            </IconButton>
-            <nav
-              className="burger-navigation"
-            >
+            </MyIconButton>
+            <nav className="burger-navigation">
               <ul className="second-list">
                 <li>
                   <Button className="burger-nav-link">Home</Button>
@@ -92,19 +93,13 @@ export default function Header() {
                 </li>
               </ul>
             </nav>
-          </div>
+          </header>
         )}
-        
-      </header>
+      </Fragment>
     );
   } else {
     return (
       <header className="main-header">
-        <img
-          className="img-fotograf"
-          src="https://images.unsplash.com/photo-1625492600712-84d1b02dc263?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
-          alt=""
-        />
         <nav className="main-navigation">
           <ul>
             <li>
@@ -125,8 +120,10 @@ export default function Header() {
         </nav>
         <div className="main-logo">
           <p>PACHOTA PHOTOS</p>
+          <img className="click-about-icon" src={arrow} alt="arrow icon" />
         </div>
       </header>
+      
     );
   }
 }
