@@ -8,7 +8,9 @@ export default function App() {
       <div className="sec-body">
         <Header />
       </div>
+      <div>
       <About />
+      </div>
     </React.Fragment>
   );
 }
