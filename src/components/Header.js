@@ -20,6 +20,12 @@ export default function Header() {
     setState(window.innerWidth);
   });
   function openBurgerMenu() {
+    if(counter % 2 == 0) {
+      document.body.style.overflow = "hidden";
+    }
+    else {
+      document.body.style.overflow = "visible";
+    }
     setTimeout(() => setCounter(counter + 1), 350);
   }
   if (state <= 700) {
