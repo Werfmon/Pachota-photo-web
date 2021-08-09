@@ -20,7 +20,7 @@ export default function Header() {
     setState(window.innerWidth);
   });
   function openBurgerMenu() {
-    if(counter % 2 == 0) {
+    if(counter % 2 === 0) {
       document.body.style.overflow = "hidden";
     }
     else {
