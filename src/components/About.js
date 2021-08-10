@@ -3,9 +3,9 @@ import React from "react";
 export default function About() {
   return (
     <main id='about'>
-      <section className="about-section" >
+      <section className="about-section">
         <div>
-          <p className="para-1">
+          <p className="para-1"  >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum odio
             perferendis deleniti non. Nobis ipsa perferendis ipsam minus
             exercitationem nostrum, magni in iusto animi modi, fugiat voluptatem
