@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment} from "react";
 
 import { Button, IconButton, withStyles } from "@material-ui/core";
 
@@ -14,24 +14,35 @@ const MyIconButton = withStyles((theme) => ({
 export default function Header() {
 
   const [state, setState] = useState(window.innerWidth);
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(true);
+  function delOverflow() {
+    
+    document.body.style = "visible";
+    if(counter){
+      setCounter(false)
+    }
+    else {
+      setCounter(true)
+    }
+  }
 
   window.addEventListener("resize", () => {
     setState(window.innerWidth);
   });
   function openBurgerMenu() {
-    if(counter % 2 === 0) {
+    if(counter) {
       document.body.style.overflow = "hidden";
+      setTimeout(() => setCounter(false), 350);
     }
     else {
       document.body.style.overflow = "visible";
+      setTimeout(() => setCounter(true), 350);
     }
-    setTimeout(() => setCounter(counter + 1), 350);
   }
   if (state <= 700) {
     return (
       <Fragment>
-        {counter % 2 === 0 ? (
+        {counter ? (
           <header className="burger-header">
             <MyIconButton onClick={openBurgerMenu} className='myIconButton'>
               <img src={menu} alt="menu icon" title='menu' />
@@ -51,10 +62,10 @@ export default function Header() {
             <nav className="burger-navigation">
               <ul className="second-list">
                 <li>
-                  <Button className="burger-nav-link">Home</Button>
+                  <Button onClick={delOverflow} className="burger-nav-link">Home</Button>
                 </li>
                 <li>
-                  <Button href='#about' className="burger-nav-link">O mně</Button>
+                  <Button onClick={delOverflow}  href='#about' className="burger-nav-link">O mně</Button>
                 </li>
                 <li>
                   <Button className="burger-nav-link">Tvorba</Button>
