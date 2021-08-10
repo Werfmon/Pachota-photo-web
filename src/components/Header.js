@@ -1,10 +1,11 @@
 import React, { useState, Fragment } from "react";
-import { Route, Link, Switch } from "react-router-dom";
 import { IconButton, withStyles } from "@material-ui/core";
 
 import arrow from "../img/arrow.svg";
 import menu from "../img/menu.svg";
-import About from "./About";
+
+import ListItem from './ListItem'
+import SwitchChange from "./SwitchChange";
 
 const MyIconButton = withStyles((theme) => ({
   root: {
@@ -89,22 +90,4 @@ export default function Header() {
       </header>
     );
   }
-  
-}
-export function ListItem(props) {
-  return(
-    <li>
-      <Link to={`/${props.to}`} className={props.className} onClick={props.delOverflow} >{props.text}</Link>
-    </li>
-  )
-}
-export function SwitchChange() {
-  return  (
-    <Switch>
-        <Route path="/home"></Route>
-        <Route path="/about" render={() => <About />}></Route>
-        <Route path="/creation"></Route>
-        <Route path="/contact"></Route>
-      </Switch>
-  )
 }
