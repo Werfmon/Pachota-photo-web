@@ -15,7 +15,8 @@ export default function About() {
           <img
             className="section-img-1"
             src={img_car3}
-            alt=""
+            alt="car"
+            title='car'
           />
           <p className="para-2">
           Focení se věnuji už přes rok a za určitý čas jsem se toho hodně naučil což se odvíjí na kvalitě mých fotek. 
@@ -24,7 +25,8 @@ export default function About() {
           <img
             className="section-img-2"
             src={img_car2}
-            alt=""
+            alt="car"
+            title='car'
           />
           <p className="para-3">
           Nedávno jsem si tak trochu splnil sen když jsem začal fotit pro <a id='furt_bokem' href='https://furtbokem.eu/'>FURT BOKEM</a> za což jsem velice rád a posouvá mě to kupředu.
@@ -32,7 +34,8 @@ export default function About() {
           <img
             className="section-img-3"
             src={img_car1}
-            alt=""
+            alt="car"
+            title='car'
           />
         </div>
       </section>
