@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "Roboto", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-}
-
 * {
   -webkit-scroll-behavior: smooth;
   scroll-behavior: smooth;
@@ -11,7 +6,11 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: "Roboto", sans-serif;
+  font-family: "Oswald", sans-serif;
+}
+
+*:focus {
+  outline: none;
 }
 
 body {
@@ -120,7 +119,7 @@ body {
 .main-header .main-navigation ul .main-nav-link {
   color: #fff;
   text-align: center;
-  padding: .3rem 2rem;
+  padding: 0.3rem 2rem;
   text-decoration: none;
   color: #fff;
   border-radius: 5px;
@@ -148,6 +147,7 @@ body {
   text-align: center;
   border-inline: #fff solid 4px;
   padding-inline: 0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .main-logo a {
@@ -261,25 +261,25 @@ body {
   height: 100%;
 }
 
-main {
+#main {
   z-index: -1;
-  padding-top: 4rem;
-  margin-top: 3rem;
   position: absolute;
-  word-spacing: 1px;
-  letter-spacing: 3px;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  height: 100%;
+  width: 100%;
   color: #fff;
   background-color: #111111;
   height: auto;
 }
 
-main .about-section {
+#main .about-section {
   max-width: 1700px;
   padding-inline: 5rem;
   margin: 0 auto;
 }
 
-main .about-section div {
+#main .about-section div {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (1fr)[3];
@@ -289,13 +289,24 @@ main .about-section div {
   gap: 5rem 10rem;
 }
 
-main .about-section div img {
+#main .about-section div .span-text {
+  color: #df0000;
+  letter-spacing: 1px;
+}
+
+#main .about-section div #furt_bokem {
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #df0000;
+}
+
+#main .about-section div img {
   border-radius: 8px;
   width: 100%;
   height: auto;
 }
 
-main .about-section div .section-img-1 {
+#main .about-section div .section-img-1 {
   -ms-grid-column: 3;
   -ms-grid-column-span: 2;
   grid-column: 3 / 5;
@@ -304,7 +315,7 @@ main .about-section div .section-img-1 {
   grid-row: 1 / 2;
 }
 
-main .about-section div .para-1 {
+#main .about-section div .para-1 {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / 3;
@@ -313,7 +324,7 @@ main .about-section div .para-1 {
       align-self: center;
 }
 
-main .about-section div .section-img-2 {
+#main .about-section div .section-img-2 {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
@@ -322,7 +333,7 @@ main .about-section div .section-img-2 {
   grid-column: 2 / 4;
 }
 
-main .about-section div .para-2 {
+#main .about-section div .para-2 {
   -ms-grid-column: 4;
   -ms-grid-column-span: 2;
   grid-column: 4 / 6;
@@ -334,7 +345,7 @@ main .about-section div .para-2 {
   grid-row: 2 / 3;
 }
 
-main .about-section div .section-img-3 {
+#main .about-section div .section-img-3 {
   -ms-grid-column: 3;
   -ms-grid-column-span: 2;
   grid-column: 3 / 5;
@@ -343,13 +354,142 @@ main .about-section div .section-img-3 {
   grid-row: 3 / 4;
 }
 
-main .about-section div .para-3 {
+#main .about-section div .para-3 {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / 3;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+#main .contact {
+  height: calc(100vh - 5rem);
+  margin-inline: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Oswald", sans-serif;
+}
+
+#main .contact .contact-form {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.095);
+}
+
+#main .contact .contact-form input {
+  float: right;
+  font-size: 1.5rem;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+  border: 5px white solid;
+  border-bottom: none;
+  background-color: rgba(124, 116, 116, 0);
+}
+
+#main .contact .contact-form #email_id {
+  border-radius: 5px 5px 0 0;
+}
+
+#main .contact .contact-form input[type="submit"] {
+  cursor: pointer;
+  border-bottom: #fff 5px solid;
+  border-radius: 0 0 5px 5px;
+}
+
+#main .contact .contact-form textarea {
+  float: right;
+  width: 100%;
+  display: block;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px #050505 solid;
+  resize: vertical;
+  min-height: 4rem;
+  height: 10rem;
+  border: 5px white solid;
+  border-bottom: none;
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 10px;
+}
+
+#main .contact .contact-container {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-rows: 5rem 5rem;
+  -ms-grid-columns: (auto)[1];
+      grid-template: 5rem 5rem/repeat(1, auto);
+  margin-top: 4rem;
+  row-gap: 3rem;
+  text-align: center;
+}
+
+#main .contact .contact-container .container-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#main .contact .contact-container .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 2rem;
+  font-size: 3.5vw;
+}
+
+#main .contact .contact-container .links.ig {
+  background-image: linear-gradient(45deg, #f09433 0%, #e6683c 20%, #dc2743 40%, #cc2366 60%, #bc1888 100%);
+}
+
+#main .contact .contact-container .links.email {
+  background-image: linear-gradient(45deg, #db364f 0%, #a80a0a 70%, #df6275 100%);
+}
+
+#main .contact .link-logo {
+  margin-bottom: -15px;
+}
+
+#main .contact .link-logo .logo {
+  height: 70px;
+  width: 70px;
+}
+
+#main .contact a {
+  color: #fff;
+  height: 100px;
+  font-size: 4rem;
+}
+
+#main .contact-heading {
+  text-align: center;
+  height: 7rem;
+  margin-bottom: 8rem;
+  font-size: 6rem;
+  font-family: "Oswald", sans-serif;
 }
 
 .back-button {
@@ -359,9 +499,16 @@ main .about-section div .para-3 {
   right: 10px;
   width: 100px;
   height: auto;
+  -webkit-transition: opacity 1s, right 0.5s;
+  transition: opacity 1s, right 0.5s;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   fill: #fff;
+}
+
+.back-button:hover {
+  opacity: 0.6;
+  right: 15px;
 }
 
 @media only screen and (max-width: 700px) and (min-width: 0px) {
@@ -372,6 +519,9 @@ main .about-section div .para-3 {
   }
   .back-button {
     display: none;
+  }
+  .contact-container .links {
+    font-size: 1.6rem !important;
   }
 }
 

@@ -52,7 +52,7 @@ export default function Header() {
             </MyIconButton>
             <nav className="burger-navigation">
               <ul className="second-list">
-                  <ListItem to='home' text='Home' class="burger-nav-link" delOverflow={delOverflow}/>                
+                  <ListItem to='' text='Home' class="burger-nav-link" delOverflow={delOverflow}/>                
                   <ListItem to='about' text='O mně' class="burger-nav-link" delOverflow={delOverflow}/>                
                   <ListItem to='creation' text='Tvorba' class="burger-nav-link" delOverflow={delOverflow}/>                
                   <ListItem to='contact' text='Kontakt' class="burger-nav-link" delOverflow={delOverflow}/>                
@@ -67,7 +67,7 @@ export default function Header() {
       <header className="main-header">
         <nav className="main-navigation">
           <ul>
-            <ListItem to='home' text='Home'  class="main-nav-link"/>
+            <ListItem to='' text='Home'  class="main-nav-link"/>
           </ul>
           <ul className="second-list">
             <ListItem to='about' text='O mně' class="main-nav-link"/>
