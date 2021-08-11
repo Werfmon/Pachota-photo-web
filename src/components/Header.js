@@ -48,6 +48,7 @@ export default function Header() {
                 <img className="click-about-icon" src={arrow} alt="arrow icon" title="arrow icon to slide" />
               </a>
             </div>
+            <SwitchChange />
           </header>
         ) : (
           <header className="burger-container">
@@ -56,15 +57,14 @@ export default function Header() {
             </MyIconButton>
             <nav className="burger-navigation">
               <ul className="second-list">
-                  <ListItem to='/home' text='Home' className="burger-nav-link" delOverflow={delOverflow}/>                
-                  <ListItem to='/about' text='O mně' className="burger-nav-link" delOverflow={delOverflow}/>                
-                  <ListItem to='/creation' text='Tvorba' className="burger-nav-link" delOverflow={delOverflow}/>                
-                  <ListItem to='contact' text='Kontakt' className="burger-nav-link" delOverflow={delOverflow}/>                
+                  <ListItem to='home' text='Home' class="burger-nav-link" delOverflow={delOverflow}/>                
+                  <ListItem to='about' text='O mně' class="burger-nav-link" delOverflow={delOverflow}/>                
+                  <ListItem to='creation' text='Tvorba' class="burger-nav-link" delOverflow={delOverflow}/>                
+                  <ListItem to='contact' text='Kontakt' class="burger-nav-link" delOverflow={delOverflow}/>                
               </ul>
             </nav>
           </header>
         )}
-        <SwitchChange />
       </Fragment>
     );
   } else {
@@ -72,12 +72,12 @@ export default function Header() {
       <header className="main-header">
         <nav className="main-navigation">
           <ul>
-            <ListItem to='home' text='Home'  className="main-nav-link"/>
+            <ListItem to='home' text='Home'  class="main-nav-link"/>
           </ul>
           <ul className="second-list">
-            <ListItem to='about' text='O mně' className="main-nav-link"/>
-            <ListItem to='creation' text='Tvorba' className="main-nav-link"/>
-            <ListItem to='contact' text='Kontakt' className="main-nav-link"/>
+            <ListItem to='about' text='O mně' class="main-nav-link"/>
+            <ListItem to='creation' text='Tvorba' class="main-nav-link"/>
+            <ListItem to='contact' text='Kontakt' class="main-nav-link"/>
           </ul>
         </nav>
         <div className="main-logo">
