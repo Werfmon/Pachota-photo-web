@@ -1,11 +1,11 @@
 import React, { useState, Fragment } from "react";
 import { IconButton, withStyles } from "@material-ui/core";
 
-import arrow from "../img/arrow.svg";
 import menu from "../img/menu.svg";
 
 import ListItem from './ListItem'
 import SwitchChange from "./SwitchChange";
+import Logo from './Logo'
 
 const MyIconButton = withStyles((theme) => ({
   root: {
@@ -42,12 +42,7 @@ export default function Header() {
             <MyIconButton onClick={openBurgerMenu} className="myIconButton">
               <img src={menu} alt="menu icon" title="menu" />
             </MyIconButton>
-            <div className="main-logo-burger">
-              <p>PACHOTA PHOTOS</p>
-              <a href="#about">
-                <img className="click-about-icon" src={arrow} alt="arrow icon" title="arrow icon to slide" />
-              </a>
-            </div>
+            <Logo class='main-logo-burger' />
             <SwitchChange />
           </header>
         ) : (
@@ -80,12 +75,7 @@ export default function Header() {
             <ListItem to='contact' text='Kontakt' class="main-nav-link"/>
           </ul>
         </nav>
-        <div className="main-logo">
-          <p>PACHOTA PHOTOS</p>
-          <a href="#about">
-            <img className="click-about-icon" src={arrow} alt="arrow icon" title="arrow icon to slide"/>
-          </a>
-        </div>
+        <Logo class='main-logo'/>
         <SwitchChange />
       </header>
     );
