@@ -36,15 +36,18 @@ export default function Header() {
   }
   if (state <= 730) {
     return (
-      <Fragment>
+      <div className="sec-body">
+
         {boolChange ? (
-          <header className="burger-header">
-            <MyIconButton onClick={openBurgerMenu} className="myIconButton">
-              <img src={menu} alt="menu icon" title="menu" />
-            </MyIconButton>
-            <Logo class='main-logo-burger' />
+          <div>
+            <header className="burger-header">
+              <MyIconButton onClick={openBurgerMenu} className="myIconButton">
+                <img src={menu} alt="menu icon" title="menu" />
+              </MyIconButton>
+              <Logo class='main-logo-burger' />
+            </header>
             <SwitchChange />
-          </header>
+            </div>
         ) : (
           <header className="burger-container">
             <MyIconButton onClick={openBurgerMenu}>
@@ -60,10 +63,13 @@ export default function Header() {
             </nav>
           </header>
         )}
-      </Fragment>
+        </div>
     );
   } else {
     return (
+      <Fragment>
+        <div className="sec-body">
+
       <header className="main-header">
         <nav className="main-navigation">
           <ul>
@@ -76,8 +82,10 @@ export default function Header() {
           </ul>
         </nav>
         <Logo class='main-logo'/>
-        <SwitchChange />
       </header>
+        </div>
+        <SwitchChange />
+      </Fragment>
     );
   }
 }

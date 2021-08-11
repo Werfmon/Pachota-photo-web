@@ -50,9 +50,10 @@ body {
     display: grid;
     place-content: center;
     color: #fff;
+    border-radius: 10px;
+    padding: .5rem 3.5rem;
     text-decoration: none;
     border: #fff 1px solid;
-    width: 8rem;
     margin-bottom: 4rem;
   }
 }
@@ -177,7 +178,6 @@ body {
 #main {
   z-index: -1;
   position: absolute;
-  margin-top: 4rem;
   padding-top: 2rem;
   height: 100%;
   width: 100%;

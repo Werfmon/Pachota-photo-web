@@ -8,9 +8,9 @@ export default function App() {
   return (
     <React.Fragment>
       <Router>
-        <div className="sec-body">
+        
           <Header />
-        </div>
+        
       <BackButton />
       </Router>
     </React.Fragment>
