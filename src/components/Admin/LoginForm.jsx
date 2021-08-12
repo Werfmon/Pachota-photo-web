@@ -35,7 +35,7 @@ export default function LoginForm() {
                      
                     <Form className='admin-form'>
                         <div>
-                            <label htmlFor="login_email" placeholder='name@adress.dome'>Email: </label>
+                            <label htmlFor="login_email">Email: </label>
                             <Field validate={validateEmail} id='login_email'  className='login-field' name='login_email' />
                         </div>
                             {touched.login_email && errors.login_email && <div className='errors'>{errors.login_email}</div>}
