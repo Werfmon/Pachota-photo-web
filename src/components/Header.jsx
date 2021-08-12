@@ -3,9 +3,9 @@ import { IconButton, withStyles } from "@material-ui/core";
 
 import menu from "../img/menu.svg";
 
-import ListItem from './ListItem'
-import SwitchChange from "./SwitchChange";
-import Logo from './Logo'
+import ListItem from './ListItem.jsx'
+import SwitchChange from "./SwitchChange.jsx";
+import Logo from './Logo.jsx'
 
 const MyIconButton = withStyles((theme) => ({
   root: {
@@ -21,7 +21,6 @@ export default function Header() {
     setBoolChange(true);
       document.body.style.overflow = "visible";
   }
-
   window.addEventListener("resize", () => {
     setState(window.innerWidth);
   });
