@@ -15,7 +15,7 @@
 
 body {
   min-height: 100vh;
-  background-color: #111111;
+  background-color: #141414;
 }
 
 .sec-body {
@@ -510,6 +510,98 @@ body {
 .back-button:hover {
   opacity: 0.6;
   right: 15px;
+}
+
+.admin-header {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.admin-header h1 {
+  color: #fff;
+  font-size: 6rem;
+}
+
+.admin-main {
+  margin-top: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.admin-main .admin-form {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.admin-main .admin-form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-block: .7rem;
+}
+
+.admin-main .admin-form div .login-field {
+  background-color: #1d1d1d;
+  border: 2px #9b9b9b solid;
+  width: 15vw;
+  font-size: 1rem;
+  color: #fff;
+  min-width: 18rem;
+  padding: .2rem .4rem;
+}
+
+.admin-main .admin-form div label {
+  width: 4.5rem;
+  color: #fff;
+}
+
+.admin-main .admin-form .errors {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  justify-self: flex-start;
+  color: #db3232;
+  text-align: center;
+  margin-top: -8px;
+}
+
+.admin-main .admin-form .errors::before {
+  content: '*';
+  padding-right: 2px;
+}
+
+.admin-main .admin-form button[type='submit'] {
+  background-color: #1a1a1a;
+  margin-top: .5rem;
+  color: #fff;
+  font-size: 1.3rem;
+  width: 100%;
+  border: 2px #9b9b9b solid;
+  cursor: pointer;
+  padding-block: 5px;
+  margin-bottom: 2rem;
 }
 
 @media only screen and (max-width: 700px) and (min-width: 0px) {

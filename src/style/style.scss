@@ -12,7 +12,7 @@
 }
 body {
   min-height: 100vh;
-  background-color: rgb(17, 17, 17);
+  background-color: rgb(20, 20, 20);
 }
 .sec-body {
   background-image: url(https://images.unsplash.com/photo-1625492600712-84d1b02dc263?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80);
@@ -357,6 +357,69 @@ body {
     right: 15px;
   }
 }
+.admin-header{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  h1{
+    color: #fff;
+    font-size: 6rem;
+  }
+}
+.admin-main{
+  margin-top: 8rem;
+  display: flex;
+  justify-content: center;
+  .admin-form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    div{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-block: .7rem;
+      .login-field{
+        background-color: #1d1d1d;
+        border: 2px rgb(155, 155, 155) solid;
+        width: 15vw;
+        font-size: 1rem;
+        color: #fff;
+        min-width: 18rem;
+        padding: .2rem .4rem;
+        
+      }
+      label{
+        width: 4.5rem;
+        color: #fff;
+      }
+    }
+    .errors{
+      align-self: flex-end;
+      justify-self: flex-start;
+      color: rgb(219, 50, 50);
+      text-align: center;
+      margin-top: -8px;
+      &::before{
+        content: '*';
+        padding-right: 2px;
+      }
+    }
+    button[type='submit']{
+      background-color: #1a1a1a;
+      margin-top: .5rem;
+      color: #fff;
+      font-size: 1.3rem;
+      width: 100%;
+      border: 2px rgb(155, 155, 155) solid;
+      cursor: pointer;
+      padding-block: 5px;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+
 @media only screen and (max-width: 700px) and (min-width: 0px) {
   .click-about-icon {
     align-self: unset;

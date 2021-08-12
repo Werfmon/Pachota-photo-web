@@ -7,7 +7,6 @@ import LoginForm from "./components/Admin/LoginForm.jsx";
 
 
 export default function App() {
-
   return (
       <Router>
           <Switch>
