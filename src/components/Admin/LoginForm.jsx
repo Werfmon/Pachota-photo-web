@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react'
 import { Formik, Field, Form } from 'formik'
 import * as Yup from 'yup';
+
 function validateEmail(value) {
     let err;
     if(!value) {
@@ -12,7 +13,6 @@ function validateEmail(value) {
     return err;
 }
 const ErrorMessages = Yup.object().shape({
-    login_email: Yup.string().required('Zadejte email'),
     login_password: Yup.string().required('Zadejte heslo'),
 })
 export default function LoginForm() {
