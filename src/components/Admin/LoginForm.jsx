@@ -27,7 +27,25 @@ export default function LoginForm() {
                         login_password: '',
                     }}
                     onSubmit={values => {
-                        console.log(values)
+                        fetch('https://pachota-photo-backend.herokuapp.com/auth/login', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json',
+                            },
+                            body: JSON.stringify({"email":values.login_email, "password":values.login_password}) 
+                        })
+                        .then(res => {
+                            if(res.status === 401) {
+                               throw new Error("invalid login");
+                            }
+                            return res.json();
+                        })
+                        .then(data => {
+                            localStorage.setItem('token', data.token);
+                        })
+                        .catch(err => {
+                            console.error(err)
+                        })
                     }}
                     validationSchema={ErrorMessages}
                 >

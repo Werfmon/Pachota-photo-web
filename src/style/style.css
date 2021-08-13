@@ -604,6 +604,30 @@ body {
   margin-bottom: 2rem;
 }
 
+.image-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.image-container .image-part {
+  width: 40vw;
+}
+
+.image-container .image-part .image-display {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-container .image-part .image-description {
+  color: #fff;
+}
+
 @media only screen and (max-width: 700px) and (min-width: 0px) {
   .click-about-icon {
     -ms-flex-item-align: unset;

@@ -22,6 +22,7 @@ export default function App() {
          .then(res => res.json())
          .then(data => setImages(data))
          .catch(err => {
+           console.error(err.message);
          })
      }, []);
 
