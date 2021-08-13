@@ -616,6 +616,7 @@ body {
 }
 
 .image-container .image-part {
+  margin: 1rem;
   width: 40vw;
 }
 
