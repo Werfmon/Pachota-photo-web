@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Formik, Form, Field } from "formik";
 import ig from "../img/ig-logo.svg";
 import gmail from "../img/gmail-icon.svg";
 
@@ -9,12 +9,22 @@ export default function Contact() {
     <main id="main">
       <h1 className="contact-heading">Kontakt</h1>
       <section className="contact">
-          <form className='contact-form'>
-              <input type='email' id='email_id' maxLength='50' placeholder='Váš Email'/>              
-              <input type="text" id='subject' maxLength='50' placeholder='Předmět'/>
-              <textarea name="field" id="field" rows="10" placeholder='Zde pište' defaultValue=''/>
+        <Formik initialValues={ {
+            email_id: '',
+            subject: '',
+        }}
+        onSubmit={(values) => {
+          console.log(values);
+        }}>
+          {({touched, errors}) => (
+            <Form className='contact-form'>
+              <Field type='email' id='email_id' maxLength='50' placeholder='Váš Email'/>              
+              <Field type="text" id='subject' maxLength='50' placeholder='Předmět'/>
+              <Field as='textarea' name="field" id="field" rows="10" placeholder='Zde pište' defaultValue=''/>
               <input type="submit" value="Odeslat" />
-          </form>
+          </Form>
+          )}
+        </Formik>
         <div className='contact-container'>
             <div className='container-child'>
                 <a className='links email' href="mailto:honzapachota@gmail.com">honzapachota@gmail.com</a>

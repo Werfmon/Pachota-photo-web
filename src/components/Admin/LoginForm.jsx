@@ -44,7 +44,7 @@ export default function LoginForm() {
                             <Field id='login_password' className='login-field' name='login_password' />
                         </div>
                             {touched.login_password && errors.login_password && <div  className='errors'>{errors.login_password}</div>}
-                        <button type='submit'>Login</button>
+                        <input type='submit' value='Login'/>
                     </Form>
                     )}
                 </Formik>

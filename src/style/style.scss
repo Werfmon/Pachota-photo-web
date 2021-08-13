@@ -387,7 +387,6 @@ body {
         color: #fff;
         min-width: 18rem;
         padding: .2rem .4rem;
-        
       }
       label{
         width: 4.5rem;
@@ -405,7 +404,7 @@ body {
         padding-right: 2px;
       }
     }
-    button[type='submit']{
+    input[type='submit']{
       background-color: #1a1a1a;
       margin-top: .5rem;
       color: #fff;
@@ -418,8 +417,6 @@ body {
     }
   }
 }
-
-
 @media only screen and (max-width: 700px) and (min-width: 0px) {
   .click-about-icon {
     align-self: unset;

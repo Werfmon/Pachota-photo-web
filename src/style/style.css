@@ -592,7 +592,7 @@ body {
   padding-right: 2px;
 }
 
-.admin-main .admin-form button[type='submit'] {
+.admin-main .admin-form input[type='submit'] {
   background-color: #1a1a1a;
   margin-top: .5rem;
   color: #fff;
