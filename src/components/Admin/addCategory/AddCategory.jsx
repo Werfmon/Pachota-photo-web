@@ -2,13 +2,13 @@ import React, { Fragment , useState} from 'react'
 import { Formik, Field, Form } from 'formik'
 
 export default function AddCategory() {
-    const [data, setdata] = useState({})
     const [pictures, setPictures] = useState([]);
     const [dataBool, setDataBool] = useState(false);
     const [action, setAction] = useState('');
+
     return (
         <Fragment>
-            <section>
+            <section className='add-category-route'>
                 <h2 id='category-name-add'>-</h2>
                 <Formik 
                     initialValues={{
@@ -18,12 +18,12 @@ export default function AddCategory() {
                         values.category_name 
                         && (document.getElementById('category-name-add').innerHTML = 'Kategorie: ' + values.category_name)
                         && setDataBool(true);
-
+                        document.getElementById('category_name').value = "";
                         setAction(values.category_name);
                     }}
                 >
                     <Form className='add-category-form'>
-                        <Field name='category_name' id='category_name' placeholder='Zadej jméno kategorie' />
+                        <Field maxLength='64' name='category_name' id='category_name' placeholder='Zadej jméno kategorie' />
                         <input type="submit" value='Přidat' />
                     </Form>
                 </Formik>
@@ -37,19 +37,37 @@ export default function AddCategory() {
                                 description_picture_add: "",
                             }}
                             onSubmit={(values) => {
-                                setPictures([...pictures, {link: values.link_picture_add, description: values.description_picture_add}]);
+                                setPictures([...pictures, {description: values.description_picture_add, link: values.link_picture_add, }]);
+                                document.getElementById('link_picture_add').value = '';
+                                document.getElementById('description_picture_add').value = '';
                             }}
                             >
                             <Form className="add-category-form-2">
-                                <Field name="link_picture_add" id="link_picture_add" placeholder='URL'></Field>
-                                <Field as='textarea' name="description_picture_add" id="description_picture_add" placeholder='Popis'></Field>
+                                <Field maxLength='512' name="link_picture_add" id="link_picture_add" placeholder='URL'></Field>
+                                <Field maxLength='128' as='textarea' name="description_picture_add" id="description_picture_add" placeholder='Popis'></Field>
                                 <input type="submit" value="Přidat" />
                             </Form>
                             </Formik>
                             <Formik initialValues={{}} onSubmit={() => {
-                                setdata({action_name: action, pictures});
-                                console.log(data);
-                                console.log(pictures);
+                                document.getElementById('link_picture_add').value = '';
+                                document.getElementById('description_picture_add').value = ''; 
+
+                                fetch('https://pachota-photo-backend.herokuapp.com/api/action', {
+                                    method: 'POST',
+                                    headers: {
+                                        'content-type': 'application/json',
+                                        'x-access-token': localStorage.getItem('token')
+                                    },
+                                    body: JSON.stringify({ name: action, images: pictures })
+                                })
+                                .then(res => {
+                                    if(res.status === 401) {
+                                        throw new Error("invalid Upload");
+                                    }
+                                    else alert('Successful')
+                                })
+                                .catch(err => console.error(err));
+                                console.log(({ name: action, images: pictures}));
                             }}>
                             <Form className="add-category-form-2">
                                 <input id='add-picture-submit-all' type="submit" value="Odeslat" />
