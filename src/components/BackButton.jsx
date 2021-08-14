@@ -4,6 +4,7 @@ import arrow from '../img/arrow2.svg'
 
 export default function BackButton() {
     const [style, setStyle] = useState('none');
+    
     window.addEventListener('scroll', () => {
         if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
             setStyle('block')

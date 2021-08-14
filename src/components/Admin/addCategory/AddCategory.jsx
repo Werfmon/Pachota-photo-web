@@ -8,7 +8,7 @@ export default function AddCategory() {
 
     return (
         <Fragment>
-            <section className='add-category-route'>
+            <section className='category-route'>
                 <h2 id='category-name-add'>-</h2>
                 <Formik 
                     initialValues={{

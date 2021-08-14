@@ -5,7 +5,6 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   list-style: none;
   font-family: "Oswald", sans-serif;
 }
@@ -17,6 +16,7 @@
 body {
   min-height: 100vh;
   background-color: #111111;
+  overflow-x: hidden;
 }
 
 .sec-body {
@@ -76,11 +76,13 @@ body {
 }
 
 .main-header {
+  overflow-y: hidden;
   background-color: rgba(10, 10, 10, 0.733);
-  height: 5rem;
+  height: 5.5rem;
 }
 
 .main-header .main-navigation {
+  overflow-y: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -579,9 +581,6 @@ body {
 }
 
 .admin-main .admin-form {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -598,9 +597,6 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin-block: 0.7rem;
 }
 
@@ -659,6 +655,68 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100vw;
+}
+
+.map-fnc {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  width: 40vw;
+  height: auto;
+  margin: 5px;
+  color: white;
+  border: 2px rgba(42, 38, 38, 0.664) solid;
+  -webkit-box-shadow: 2px 2px 10px 1px #888282;
+          box-shadow: 2px 2px 10px 1px #888282;
+  background-image: linear-gradient(20deg, rgba(238, 13, 13, 0.876), rgba(53, 52, 52, 0.555));
+}
+
+.butt-submit-delete {
+  background-color: white;
+  padding: 1rem 5rem;
+  border-radius: 20px;
+  border: 2px rgba(221, 9, 9, 0.664) solid;
+  width: 40vw;
+  margin-top: 4rem;
+  cursor: pointer;
+}
+
+.category-route.delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#category_name_remove {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.ul-data-remove {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.category-route {
+  width: 100%;
+  background-color: #fff;
 }
 
 .admin-bg {
