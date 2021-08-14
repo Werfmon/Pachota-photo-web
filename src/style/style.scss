@@ -12,7 +12,7 @@
 }
 body {
   min-height: 100vh;
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(17, 17, 17);
 }
 .sec-body {
   background-image: url(https://images.unsplash.com/photo-1625492600712-84d1b02dc263?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80);
@@ -51,7 +51,7 @@ body {
     place-content: center;
     color: #fff;
     border-radius: 10px;
-    padding: .5rem 3.5rem;
+    padding: 0.5rem 3.5rem;
     text-decoration: none;
     border: #fff 1px solid;
     margin-bottom: 4rem;
@@ -194,11 +194,11 @@ body {
       grid-template: repeat(3, 1fr) / repeat(5, 3fr);
       text-align: center;
       gap: 5rem 10rem;
-      .span-text{
+      .span-text {
         color: #df0000;
         letter-spacing: 1px;
       }
-      #furt_bokem{
+      #furt_bokem {
         letter-spacing: 1px;
         text-decoration: none;
         color: #df0000;
@@ -309,14 +309,13 @@ body {
             #cc2366 60%,
             #bc1888 100%
           );
-   
         }
         &.email {
           background-image: linear-gradient(
             45deg,
             #db364f 0%,
-             #a80a0a 70%,
-            #df6275 100%,
+            #a80a0a 70%,
+            #df6275 100%
           );
         }
       }
@@ -357,82 +356,271 @@ body {
     right: 15px;
   }
 }
-.admin-header{
+.admin-anim {
+  min-height: 100vh;
+  width: 100%;
+  animation: adminBackground 8s infinite;
+  background-image: linear-gradient(
+    45deg,
+    #854500 0%,
+    #b12f00 20%,
+    #950016 40%,
+    #a70043 60%,
+    #88045e 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 400% 400%;
+}
+.admin-header {
   width: 100vw;
   display: flex;
   justify-content: center;
-  h1{
-    color: #fff;
+  h1 {
+    color: rgb(255, 255, 255);
     font-size: 6rem;
   }
 }
-.admin-main{
+@keyframes adminBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  33% {
+    background-position: 100% 50%;
+  }
+  66% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@mixin form_background {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.219);
+  border: 1px solid rgba(160, 160, 160, 0.125);
+  border-radius: 8px;
+  color: #fff;
+}
+.admin-main {
   margin-top: 8rem;
   display: flex;
   justify-content: center;
-  .admin-form{
+  .admin-form {
     align-items: center;
     display: flex;
     flex-direction: column;
-    div{
+    div {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-block: .7rem;
-      .login-field{
-        background-color: #1d1d1d;
-        border: 2px rgb(155, 155, 155) solid;
+      margin-block: 0.7rem;
+      .login-field {
         width: 15vw;
         font-size: 1rem;
-        color: #fff;
         min-width: 18rem;
-        padding: .2rem .4rem;
+        padding: 0.2rem 0.4rem;
+        @include form_background;
       }
-      label{
+      label {
         width: 4.5rem;
-        color: #fff;
+        color: rgb(255, 255, 255);
       }
     }
-    .errors{
+    .errors {
       align-self: flex-end;
       justify-self: flex-start;
-      color: rgb(219, 50, 50);
+      color: rgb(255, 255, 255);
       text-align: center;
       margin-top: -8px;
-      &::before{
-        content: '*';
+
+      &::before {
+        content: "*";
         padding-right: 2px;
       }
     }
-    input[type='submit']{
-      background-color: #1a1a1a;
-      margin-top: .5rem;
-      color: #fff;
+    input[type="submit"] {
+      margin-top: 0.5rem;
       font-size: 1.3rem;
       width: 100%;
-      border: 2px rgb(155, 155, 155) solid;
       cursor: pointer;
       padding-block: 5px;
       margin-bottom: 2rem;
+      @include form_background();
     }
   }
 }
-.image-container{
+.admin-bg{
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  @mixin change-nav {
+    position: absolute;
+    margin-top: 10rem;
+  }
+  .admin-change-js-none{
+    top: 90vh;
+    left: -4rem;
+    opacity: 0;
+    @include change-nav()
+  }
+  .admin-change-js{
+    opacity: 1;
+    top: 1rem;
+    left: 2rem;
+    display: block;
+    @include change-nav()
+  }
+  #category-name-add{
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .category-name-adding {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .add-category-form, .add-category-form-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20rem;
+    margin: 0 auto;
+    text-align: center;
+    #link_picture_add{
+      padding-block: .2rem;
+    }
+    #category_name{
+      margin-bottom: 10px;
+      border: 1px solid;
+      padding: .2rem .5rem;
+      width: 20rem;
+      border: rgb(0, 0, 0) 2px solid;
+      background-color: rgba(0, 0, 0, 0);
+      border-radius: 8px;
+    }
+    input[type='submit'] {
+      border: none;
+      align-self: flex-end;
+      cursor: pointer;
+      border: #df0000 2px solid;
+      background-color: rgba(0, 0, 0, 0);
+      padding: .2rem 1.5rem;
+      border-radius: 8px;
+      width: 10rem;
+    }
+  }
+  .add-category-form-2{
+    width: 40rem;
+    input{
+      width: 100%;
+      padding-left: .4rem;
+      margin-block: 1rem;
+      border: #000 2px solid;
+      border-radius: 8px;
+      background-color: rgb(255, 255, 255);
+    }
+    textarea{
+      width: 100%;
+      margin-block: .5rem;
+      resize: vertical;
+      padding: .4rem;
+      font-size: 1rem;
+      max-height: 20rem;
+      min-height: 5rem;
+      border: #000 2px solid;
+      border-radius: 8px;
+    }
+    #add-picture-submit-all{
+      width: 100%;
+    }
+
+  }
+  nav{
+    transition: left 2s, top 2s, opacity 1s;
+    .admin-list{
+      li{
+        font-size: 1.5rem;
+        cursor: pointer;
+        width: 100%;
+        margin-block: .5rem;
+        
+          width: 100%;
+          position: relative;
+          left: 0;
+          transition: left .5s;
+          &:hover{
+            left: 8px;
+          }
+          &::before{
+            left: -8px;
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 0px;
+            background-color: #df0000;
+            transition: all .8s;
+          }
+          &:hover::before{
+            height: 3ch;
+        }
+        a{
+          text-decoration: none;
+          color: #000;
+        }
+      }
+    }
+  }
+  #admin_nav{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    padding: .5rem;
+    position: absolute;
+    bottom: 1rem;
+    margin: .3rem;
+    left: 1rem;
+    cursor: pointer;
+    transition: background-color 1s;
+    border-radius: 50%;
+    &:hover{
+      background-color: rgba(221, 9, 9, 0.664);
+    }
+  }
+  .admin-logged-header {
+    h1 {
+      color: rgb(0, 0, 0);
+      text-align: center;
+      font-size: 3rem;
+    }
+  }
+}
+.image-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; 
-  .image-part{
-    margin: 1rem;
+  justify-content: center;
+  margin-top: 4rem;
+  .image-part {
+    padding-inline: 20px;
+    margin: 3rem auto;
     width: 40vw;
-    .image-display{
+    .image-display {
       max-width: 100%;
       height: auto;
     }
-    .image-description{
+    .image-description {
       color: #fff;
+      &::before {
+        content: "- ";
+      }
     }
   }
 }
+
 @media only screen and (max-width: 700px) and (min-width: 0px) {
   .click-about-icon {
     align-self: unset;
@@ -440,15 +628,21 @@ body {
   .back-button {
     display: none;
   }
-  .contact-container{
-    .links{
+  .contact-container {
+    .links {
       font-size: 1.6rem !important;
+    }
+  }
+  .image-container {
+    flex-direction: column;
+    .image-part {
+      width: 60vw;
+      margin: 2rem auto;
     }
   }
 }
 @media only screen and (max-width: 1100px) and (min-width: 0px) {
   main {
-    background-color: rgb(17, 17, 17);
     .about-section {
       div {
         display: block !important;

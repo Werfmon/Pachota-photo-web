@@ -15,7 +15,7 @@
 
 body {
   min-height: 100vh;
-  background-color: #141414;
+  background-color: #111111;
 }
 
 .sec-body {
@@ -63,7 +63,7 @@ body {
   place-content: center;
   color: #fff;
   border-radius: 10px;
-  padding: .5rem 3.5rem;
+  padding: 0.5rem 3.5rem;
   text-decoration: none;
   border: #fff 1px solid;
   margin-bottom: 4rem;
@@ -512,6 +512,16 @@ body {
   right: 15px;
 }
 
+.admin-anim {
+  min-height: 100vh;
+  width: 100%;
+  -webkit-animation: adminBackground 8s infinite;
+          animation: adminBackground 8s infinite;
+  background-image: linear-gradient(45deg, #854500 0%, #b12f00 20%, #950016 40%, #a70043 60%, #88045e 100%);
+  background-repeat: no-repeat;
+  background-size: 400% 400%;
+}
+
 .admin-header {
   width: 100vw;
   display: -webkit-box;
@@ -523,8 +533,38 @@ body {
 }
 
 .admin-header h1 {
-  color: #fff;
+  color: white;
   font-size: 6rem;
+}
+
+@-webkit-keyframes adminBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  33% {
+    background-position: 100% 50%;
+  }
+  66% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes adminBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  33% {
+    background-position: 100% 50%;
+  }
+  66% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .admin-main {
@@ -560,48 +600,229 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-block: .7rem;
+  margin-block: 0.7rem;
 }
 
 .admin-main .admin-form div .login-field {
-  background-color: #1d1d1d;
-  border: 2px #9b9b9b solid;
   width: 15vw;
   font-size: 1rem;
-  color: #fff;
   min-width: 18rem;
-  padding: .2rem .4rem;
+  padding: 0.2rem 0.4rem;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.219);
+  border: 1px solid rgba(160, 160, 160, 0.125);
+  border-radius: 8px;
+  color: #fff;
 }
 
 .admin-main .admin-form div label {
   width: 4.5rem;
-  color: #fff;
+  color: white;
 }
 
 .admin-main .admin-form .errors {
   -ms-flex-item-align: end;
       align-self: flex-end;
   justify-self: flex-start;
-  color: #db3232;
+  color: white;
   text-align: center;
   margin-top: -8px;
 }
 
 .admin-main .admin-form .errors::before {
-  content: '*';
+  content: "*";
   padding-right: 2px;
 }
 
-.admin-main .admin-form input[type='submit'] {
-  background-color: #1a1a1a;
-  margin-top: .5rem;
-  color: #fff;
+.admin-main .admin-form input[type="submit"] {
+  margin-top: 0.5rem;
   font-size: 1.3rem;
   width: 100%;
-  border: 2px #9b9b9b solid;
   cursor: pointer;
   padding-block: 5px;
   margin-bottom: 2rem;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.219);
+  border: 1px solid rgba(160, 160, 160, 0.125);
+  border-radius: 8px;
+  color: #fff;
+}
+
+.admin-bg {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.admin-bg .admin-change-js-none {
+  top: 90vh;
+  left: -4rem;
+  opacity: 0;
+  position: absolute;
+  margin-top: 10rem;
+}
+
+.admin-bg .admin-change-js {
+  opacity: 1;
+  top: 1rem;
+  left: 2rem;
+  display: block;
+  position: absolute;
+  margin-top: 10rem;
+}
+
+.admin-bg #category-name-add {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.admin-bg .category-name-adding {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.admin-bg .add-category-form, .admin-bg .add-category-form-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.admin-bg .add-category-form #link_picture_add, .admin-bg .add-category-form-2 #link_picture_add {
+  padding-block: .2rem;
+}
+
+.admin-bg .add-category-form #category_name, .admin-bg .add-category-form-2 #category_name {
+  margin-bottom: 10px;
+  border: 1px solid;
+  padding: .2rem .5rem;
+  width: 20rem;
+  border: black 2px solid;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 8px;
+}
+
+.admin-bg .add-category-form input[type='submit'], .admin-bg .add-category-form-2 input[type='submit'] {
+  border: none;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  cursor: pointer;
+  border: #df0000 2px solid;
+  background-color: rgba(0, 0, 0, 0);
+  padding: .2rem 1.5rem;
+  border-radius: 8px;
+  width: 10rem;
+}
+
+.admin-bg .add-category-form-2 {
+  width: 40rem;
+}
+
+.admin-bg .add-category-form-2 input {
+  width: 100%;
+  padding-left: .4rem;
+  margin-block: 1rem;
+  border: #000 2px solid;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.admin-bg .add-category-form-2 textarea {
+  width: 100%;
+  margin-block: .5rem;
+  resize: vertical;
+  padding: .4rem;
+  font-size: 1rem;
+  max-height: 20rem;
+  min-height: 5rem;
+  border: #000 2px solid;
+  border-radius: 8px;
+}
+
+.admin-bg .add-category-form-2 #add-picture-submit-all {
+  width: 100%;
+}
+
+.admin-bg nav {
+  -webkit-transition: left 2s, top 2s, opacity 1s;
+  transition: left 2s, top 2s, opacity 1s;
+}
+
+.admin-bg nav .admin-list li {
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 100%;
+  margin-block: .5rem;
+  width: 100%;
+  position: relative;
+  left: 0;
+  -webkit-transition: left .5s;
+  transition: left .5s;
+}
+
+.admin-bg nav .admin-list li:hover {
+  left: 8px;
+}
+
+.admin-bg nav .admin-list li::before {
+  left: -8px;
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 0px;
+  background-color: #df0000;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.admin-bg nav .admin-list li:hover::before {
+  height: 3ch;
+}
+
+.admin-bg nav .admin-list li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.admin-bg #admin_nav {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  padding: .5rem;
+  position: absolute;
+  bottom: 1rem;
+  margin: .3rem;
+  left: 1rem;
+  cursor: pointer;
+  -webkit-transition: background-color 1s;
+  transition: background-color 1s;
+  border-radius: 50%;
+}
+
+.admin-bg #admin_nav:hover {
+  background-color: rgba(221, 9, 9, 0.664);
+}
+
+.admin-bg .admin-logged-header h1 {
+  color: black;
+  text-align: center;
+  font-size: 3rem;
 }
 
 .image-container {
@@ -613,10 +834,12 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 4rem;
 }
 
 .image-container .image-part {
-  margin: 1rem;
+  padding-inline: 20px;
+  margin: 3rem auto;
   width: 40vw;
 }
 
@@ -627,6 +850,10 @@ body {
 
 .image-container .image-part .image-description {
   color: #fff;
+}
+
+.image-container .image-part .image-description::before {
+  content: "- ";
 }
 
 @media only screen and (max-width: 700px) and (min-width: 0px) {
@@ -641,12 +868,19 @@ body {
   .contact-container .links {
     font-size: 1.6rem !important;
   }
+  .image-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .image-container .image-part {
+    width: 60vw;
+    margin: 2rem auto;
+  }
 }
 
 @media only screen and (max-width: 1100px) and (min-width: 0px) {
-  main {
-    background-color: #111111;
-  }
   main .about-section div {
     display: block !important;
   }

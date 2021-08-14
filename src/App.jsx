@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import BackButton from "./components/BackButton.jsx";
 import Header from "./components/Header.jsx";
-import LoginForm from "./components/Admin/LoginForm.jsx";
+import Admin from "./components/Admin/Admin.jsx";
 
 export const context = createContext([]);
 const ContextProvider = context.Provider;
@@ -32,15 +32,18 @@ export default function App() {
       <Router>
           <Switch>
             <Route path='/admin' render={() => (
-              <LoginForm />
-              )}>
+                <Admin />
+            )}
+            >
             </Route>
             <Route path='/' render={() => (
               <Fragment>
                 <Header />
                 <BackButton />
               </Fragment>
-            )}></Route>
+            )}
+            >
+            </Route>
           </Switch>
       </Router>
     </ContextProvider>
