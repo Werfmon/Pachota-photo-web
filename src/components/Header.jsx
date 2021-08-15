@@ -80,8 +80,8 @@ export default function Header() {
             <ListItem to='contact' text='Kontakt' class="main-nav-link"/>
           </ul>
         </nav>
-        <Logo class='main-logo'/>
       </header>
+        <Logo class='main-logo'/>
         </div>
         <SwitchChange />
       </Fragment>

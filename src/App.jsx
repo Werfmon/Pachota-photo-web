@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect, createContext } from "react";
+import React, { Fragment, createContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import BackButton from "./components/BackButton.jsx";
@@ -9,23 +9,19 @@ export const context = createContext([]);
 const ContextProvider = context.Provider;
 
 export default function App() {
-  const [images, setImages] = useState([]);
-  useEffect(() => {
-    fetch("https://pachota-photo-backend.herokuapp.com/api/actions", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => setImages(data))
-      .catch((err) => {
-        console.error(err.message);
-      });
-  }, []);
+  function validateEmail(value) {
+    let err;
+    if(!value) {
+        err = "Zadejte e-mail";
+    }
+    else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+        err = "Neplatný e-mail";
+    }
+    return err;
+}
 
   return (
-    <ContextProvider value={images}>
+    <ContextProvider value={validateEmail}>
       <Router>
         <Switch>
           <Route path="/admin" render={() => <Admin />}></Route>

@@ -1,21 +1,13 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useContext} from 'react'
 import { Formik, Field, Form } from 'formik'
+import { context } from '../../App.jsx';
 import * as Yup from 'yup';
 
-function validateEmail(value) {
-    let err;
-    if(!value) {
-        err = "Zadejte e-mail";
-    }
-    else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-        err = "Neplatný e-mail";
-    }
-    return err;
-}
 const ErrorMessages = Yup.object().shape({
     login_password: Yup.string().required('Zadejte heslo'),
 })
 export default function LoginForm() {
+    const validateEmail = useContext(context)
         return (
             
             <Fragment>

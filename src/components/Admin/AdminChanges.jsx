@@ -4,9 +4,6 @@ import AddCategory from './addCategory/AddCategory.jsx'
 import DeleteCategory from './deleteCategory/DeleteCategory.jsx'
 import { Switch, Route, NavLink, useRouteMatch } from 'react-router-dom'
 
-
-
-
 function checkToken(component) {
     return localStorage.getItem('token') && component;
 }
@@ -15,7 +12,7 @@ function removeToken() {
     window.location.reload();
 }
 export default function AdminChanges() {
-    const [state, setState] = useState(false);
+    const [state, setState] = useState(true);
     
     const {path, url} = useRouteMatch();
     
@@ -23,12 +20,12 @@ export default function AdminChanges() {
         let nav_class = document.getElementById('nav_admin_id');
         nav_class.classList.toggle('admin-change-js'); 
         if(state) {
-            document.getElementById('nav_admin_id').style.display = "none"
             setState(false)
+            document.getElementById('nav_admin_id').style.display = "none"
         }
         else{
-            document.getElementById('nav_admin_id').style.display = "block"
             setState(true)
+            document.getElementById('nav_admin_id').style.display = "block"
         }
     }
     return (
@@ -41,7 +38,6 @@ export default function AdminChanges() {
                     <li onClick={removeToken}>Odhlásit se</li>
                 </ul>
             </nav>
-
             <button onClick={navOpen} id='admin_nav'><img src={menu} alt="menu" title='menu' /></button>
             <header className='admin-logged-header'>
                 <h1>Admin panel</h1>

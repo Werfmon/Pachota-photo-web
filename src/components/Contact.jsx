@@ -1,10 +1,17 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Formik, Form, Field } from "formik";
 import ig from "../img/ig-logo.svg";
 import gmail from "../img/gmail-icon.svg";
+import { context } from '../App.jsx';
+import * as Yup from 'yup';
 
+const ErrorMessages = Yup.object().shape({
+  subject: Yup.string().required('Zadejte předmět'),
+  field: Yup.string().required('Zadej zprávu')
+})
 
 export default function Contact() {
+  const validateEmail = useContext(context)
   return (
     <main id="main">
       <h1 className="contact-heading">Kontakt</h1>
@@ -12,15 +19,23 @@ export default function Contact() {
         <Formik initialValues={ {
             email_id: '',
             subject: '',
+            field: ''
         }}
         onSubmit={(values) => {
-          console.log(values);
-        }}>
+          document.getElementById('email_id').value = '';
+          document.getElementById('subject').value = '';
+          document.getElementById('field').value = '';
+        }}
+        validationSchema={ErrorMessages}
+        >
           {({touched, errors}) => (
             <Form className='contact-form'>
-              <Field type='email' id='email_id' maxLength='50' placeholder='Váš Email'/>              
-              <Field type="text" id='subject' maxLength='50' placeholder='Předmět'/>
-              <Field as='textarea' name="field" id="field" rows="10" placeholder='Zde pište' defaultValue=''/>
+              <Field type='email' validate={validateEmail} id='email_id' name='email_id' placeholder='Váš Email'/>  
+              {touched.email_id && errors.email_id && <div className='errors2'>{errors.email_id}</div>}            
+              <Field type="text" id='subject' name='subject' maxLength='64' placeholder='Předmět'/>
+              {touched.subject && errors.subject && <div className='errors2'>{errors.subject}</div>}            
+              <Field maxLength='512' as='textarea' name="field" id="field" rows="10" placeholder='Zde pište' defaultValue=''/>
+              {touched.field && errors.field && <div className='errors2'>{errors.field}</div>}            
               <input type="submit" value="Odeslat" />
           </Form>
           )}
