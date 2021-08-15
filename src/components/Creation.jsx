@@ -30,14 +30,14 @@ export default function Creation() {
           <h1 className='action-name'>{action.name}</h1>
           <div key={action.id} className='image-container'>
             <ul className='first-part-gallery'>
-              {action.images.filter(image => image.id % 2 === 0).map((image) => (
+              {action.images.filter(image => image.id % 2 !== 0).map((image) => (
                 <li key={image.id}>
                   <Image link={image.link} description={image.description} />
                 </li>
               ))}
             </ul>
             <ul className='second-part-gallery'>
-              {action.images.filter(image => image.id % 2 !== 0).map((image) => (
+              {action.images.filter(image => image.id % 2 === 0).map((image) => (
                 <li key={image.id}>
                 <Image link={image.link} description={image.description} />
               </li>
