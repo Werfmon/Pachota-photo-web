@@ -37,8 +37,8 @@ export default function Creation() {
             <ul className='second-part-gallery'>
               {action.images.filter(image => image.id % 2 === 0).map((image) => (
                 <li key={image.id}>
-                <Image link={image.link} description={image.description} />
-              </li>
+                  <Image link={image.link} description={image.description} />
+                </li>
               ))}
             </ul>
           </div>
