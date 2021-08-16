@@ -9,6 +9,7 @@ export default function AddCategory() {
     return (
         <Fragment>
             <section className='category-route'>
+                <h1 className='admin-category-add-heading'>Add</h1>
                 <h2 id='category-name-add'>-</h2>
                 <Formik 
                     initialValues={{
@@ -69,7 +70,7 @@ export default function AddCategory() {
                                 .catch(err => console.error(err));
                                 console.log(({ name: action, images: pictures}));
                             }}>
-                            <Form className="add-category-form-2">
+                            <Form className="add-category-form-3">
                                 <input id='add-picture-submit-all' type="submit" value="Odeslat" />
                             </Form>
                             </Formik>

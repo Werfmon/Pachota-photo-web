@@ -18,12 +18,18 @@ export default function Feedback() {
         .then(data => setFeedbacks(data))
         .catch(err => console.error(err));
     }, [])
-    console.log(feedbacks);
     return (
-        <main>
-            <ul>
+        <main className='admin-main-feddback'>
+            <h1 className='feedbacks-heading'>Feedbacks</h1>
+            
+            <ul className='feedback-list-admin'>
                 {feedbacks.map(feedback => (
-                    <li key={feedback.id}>{feedback.name}</li>
+                    <li key={feedback.id}>
+                        <p className='feedback-email'>E-mail: {feedback.email}</p>
+                        <p className='feedback-subject'>Předmět: {feedback.subject}</p>
+                        <p className='feedback-message' >{feedback.message}</p>
+                        <button>Delete</button>
+                    </li>
                 ))}
             </ul>
         </main>
