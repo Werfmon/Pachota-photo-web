@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext } from "react";
 import { Formik, Form, Field } from "formik";
 import ig from "../img/ig-logo.svg";
 import gmail from "../img/gmail-icon.svg";
@@ -22,30 +22,29 @@ export default function Contact() {
             field: ''
         }}
         onSubmit={(values) => {
-          document.getElementById('email_id').value = '';
-          document.getElementById('subject').value = '';
-          document.getElementById('field').value = '';
-
+          
           fetch('https://pachota-photo-backend.herokuapp.com/api/feedback', {
-              method: 'POST',
-              headers: {
-                  'content-type': 'application/json',
-                  'x-access-token': localStorage.getItem('token')
-              },
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+              'x-access-token': localStorage.getItem('token')
+            },
               body: JSON.stringify({email: values.email_id, subject: values.subject, message: values.field})
           })
           .then(res => {
-              if(res.status === 401) {
-                  throw new Error("invalid Upload");
-              }
+            if(res.status === 401) {
+              throw new Error("invalid Upload");
+            }
           })
           .catch(err => console.error(err));
+         
+          window.location.reload()
         }}
         validationSchema={ErrorMessages}
         >
           {({touched, errors}) => (
             <Form className='contact-form'>
-              <Field type='email' validate={validateEmail} id='email_id' name='email_id' placeholder='Váš Email'/>  
+              <Field type='text' validate={validateEmail} id='email_id' name='email_id' placeholder='Váš Email'/>  
               {touched.email_id && errors.email_id && <div className='errors2'>{errors.email_id}</div>}            
               <Field type="text" id='subject' name='subject' maxLength='64' placeholder='Předmět'/>
               {touched.subject && errors.subject && <div className='errors2'>{errors.subject}</div>}            
