@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import { Fragment } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from './Image'
 
 export default function Creation() {
@@ -26,9 +24,9 @@ export default function Creation() {
   return (
     <main id='main'>
       { actions.map(action => (
-        <Fragment>
+        <div key={action.id}>
           <h1 className='action-name'>{action.name}</h1>
-          <div key={action.id} className='image-container'>
+          <div className='image-container'>
             <ul className='first-part-gallery'>
               {action.images.filter(image => image.id % 2 !== 0).map((image) => (
                 <li key={image.id}>
@@ -44,7 +42,7 @@ export default function Creation() {
               ))}
             </ul>
           </div>
-        </Fragment>
+        </div>
         ))
       }
     </main>

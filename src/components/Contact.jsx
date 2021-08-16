@@ -25,6 +25,22 @@ export default function Contact() {
           document.getElementById('email_id').value = '';
           document.getElementById('subject').value = '';
           document.getElementById('field').value = '';
+
+          fetch('https://pachota-photo-backend.herokuapp.com/api/feedback', {
+              method: 'POST',
+              headers: {
+                  'content-type': 'application/json',
+                  'x-access-token': localStorage.getItem('token')
+              },
+              body: JSON.stringify({email: values.email_id, subject: values.subject, message: values.field})
+          })
+          .then(res => {
+              if(res.status === 401) {
+                  throw new Error("invalid Upload");
+              }
+          })
+          .catch(err => console.error(err));
+
         }}
         validationSchema={ErrorMessages}
         >

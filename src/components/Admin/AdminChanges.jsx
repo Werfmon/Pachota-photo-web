@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import menu from './../../img/menu2.svg'
-import AddCategory from './addCategory/AddCategory.jsx'
-import DeleteCategory from './deleteCategory/DeleteCategory.jsx'
+import AddCategory from './AddCategory.jsx'
+import DeleteCategory from './DeleteCategory.jsx'
+import Feedback from './Feedback'
 import { Switch, Route, NavLink, useRouteMatch } from 'react-router-dom'
 
 function checkToken(component) {
@@ -46,8 +47,7 @@ export default function AdminChanges() {
                 <Switch>
                     <Route path={`${path}/add-category`} render={() => checkToken(<AddCategory  />)} />
                     <Route path={`${path}/remove-category`} render={() => checkToken(<DeleteCategory />)} />
-                    <Route path={`${path}/change-Category`} />
-                    <Route path={`${path}/feedback`} />
+                    <Route path={`${path}/feedback`}  render={() => checkToken(<Feedback />)}/>
                 </Switch>
             </main>
         </div>
