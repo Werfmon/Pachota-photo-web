@@ -48,7 +48,7 @@ export default function Contact() {
               {touched.email_id && errors.email_id && <div className='errors2'>{errors.email_id}</div>}            
               <Field type="text" id='subject' name='subject' maxLength='64' placeholder='Předmět'/>
               {touched.subject && errors.subject && <div className='errors2'>{errors.subject}</div>}            
-              <Field maxLength='512' as='textarea' name="field" id="field" rows="10" placeholder='Zde pište' defaultValue=''/>
+              <Field maxLength='512' as='textarea' name="field" id="field" rows="10" placeholder='Zde pište'/>
               {touched.field && errors.field && <div className='errors2'>{errors.field}</div>}            
               <input type="submit" value="Odeslat" />
           </Form>
@@ -62,9 +62,9 @@ export default function Contact() {
                 </a>
             </div>
             <div className='container-child'>
-                <a className='links ig' href="https://www.instagram.com/pachota_photos/">pachota_photos</a>
-                <a href="https://www.instagram.com/pachota_photos/" className='link-logo ig-img'>
-                    <img className="logo" src={ig} alt="instagram logo" title='instagram logo' />
+                <a target='_blank' className='links ig' rel="noreferrer" href="https://www.instagram.com/pachota_photos/">pachota_photos</a>
+                <a target='_blank' href="https://www.instagram.com/pachota_photos/" rel="noreferrer" className='link-logo ig-img'>
+                    <img className="logo" src={ig} alt="instagram logo"  title='instagram logo' />
                 </a>
             </div>
         </div>

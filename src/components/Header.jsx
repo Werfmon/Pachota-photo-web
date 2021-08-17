@@ -2,6 +2,7 @@ import React, { useState, Fragment } from "react";
 import { IconButton, withStyles } from "@material-ui/core";
 
 import menu from "../img/menu.svg";
+import pachotalogo from '../img/logo_pachota_photos.png'
 
 import ListItem from './ListItem.jsx'
 import SwitchChange from "./SwitchChange.jsx";
@@ -53,8 +54,7 @@ export default function Header() {
               <img src={menu} alt="menu icon" title="menu" />
             </MyIconButton>
             <nav className="burger-navigation">
-              <ul className="second-list">
-                  <ListItem to='' text='Home' class="burger-nav-link" delOverflow={delOverflow}/>                
+              <ul className="second-list">               
                   <ListItem to='about' text='O mně' class="burger-nav-link" delOverflow={delOverflow}/>                
                   <ListItem to='creation' text='Tvorba' class="burger-nav-link" delOverflow={delOverflow}/>                
                   <ListItem to='contact' text='Kontakt' class="burger-nav-link" delOverflow={delOverflow}/>                
@@ -72,7 +72,7 @@ export default function Header() {
       <header className="main-header">
         <nav className="main-navigation">
           <ul>
-            <ListItem to='' text='Home'  class="main-nav-link"/>
+            <img src={pachotalogo} alt="logo" title='logo' className='pachota-photos-logo' />
           </ul>
           <ul className="second-list">
             <ListItem to='about' text='O mně' class="main-nav-link"/>

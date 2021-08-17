@@ -14,6 +14,12 @@
   outline: none;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  -webkit-transition: background-color 60000000000s 0s, color 60000000000s 0s;
+  transition: background-color 60000000000s 0s, color 60000000000s 0s;
+}
+
 body {
   min-height: 100vh;
   background-color: #111111;
@@ -79,7 +85,7 @@ body {
 
 .main-header {
   overflow-y: hidden;
-  background-color: rgba(10, 10, 10, 0.733);
+  background-color: rgba(0, 0, 0, 0.63);
   height: 5.5rem;
 }
 
@@ -145,16 +151,6 @@ body {
   font-size: 7vw;
 }
 
-.main-logo p {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  text-align: center;
-  border-inline: white solid 4px;
-  padding-inline: 0.5rem;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .main-logo a {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -164,12 +160,14 @@ body {
           justify-content: center;
 }
 
+.pachota-photos-logo {
+  width: 200px;
+  height: 200px;
+}
+
 .click-about-icon {
-  margin-top: 2.7rem;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
-  -ms-grid-column-align: center;
-      justify-self: center;
   cursor: pointer;
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -178,7 +176,7 @@ body {
   transition: top 2s, -webkit-transform 0.7s;
   transition: top 2s, transform 0.7s;
   transition: top 2s, transform 0.7s, -webkit-transform 0.7s;
-  top: 0;
+  top: 7rem;
   border-radius: 50%;
 }
 
@@ -189,7 +187,7 @@ body {
           animation-timing-function: ease;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  top: 2rem;
+  top: 12rem;
   -webkit-transform: rotate(450deg);
           transform: rotate(450deg);
 }
@@ -270,7 +268,6 @@ body {
   z-index: -1;
   position: absolute;
   padding-top: 2rem;
-  height: 100%;
   width: 100%;
   color: #fff;
   background-color: #111111;
@@ -396,14 +393,14 @@ body {
 }
 
 #main .contact .contact-form .errors2 {
-  min-width: 25rem;
+  min-width: 20rem;
   width: 40%;
   border-inline: white 5px solid;
   padding-left: 5px;
 }
 
 #main .contact .contact-form input {
-  min-width: 25rem;
+  min-width: 20rem;
   font-size: 1.5rem;
   color: #fff;
   padding: 10px;
@@ -415,7 +412,7 @@ body {
 }
 
 #main .contact .contact-form #email_id {
-  min-width: 25rem;
+  min-width: 20rem;
   border-radius: 5px 5px 0 0;
 }
 
@@ -426,7 +423,7 @@ body {
 }
 
 #main .contact .contact-form textarea {
-  min-width: 25rem;
+  min-width: 20rem;
   width: 40%;
   display: block;
   background-color: rgba(255, 255, 255, 0);
@@ -444,9 +441,6 @@ body {
 #main .contact .contact-container {
   display: -ms-grid;
   display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1216,7 +1210,7 @@ body {
   }
 }
 
-@media only screen and (max-height: 500px) and (min-height: 0) {
+@media screen and (max-height: 500px) and (min-height: 0) {
   .second-list {
     height: 85vh;
     overflow-y: scroll;
@@ -1240,8 +1234,8 @@ body {
   }
 }
 
-@media only screen and (max-height: 300px) and (min-height: 0) {
-  main .about-section div {
+@media screen and (max-height: 350px) and (min-height: 0) {
+  main {
     margin-top: 10rem;
   }
   .action-name {
@@ -1249,8 +1243,8 @@ body {
   }
 }
 
-@media only screen and (max-height: 200px) and (min-height: 0) {
-  main .about-section div {
+@media screen and (max-height: 200px) and (min-height: 0) {
+  main {
     margin-top: 15rem;
   }
   .action-name {
@@ -1258,8 +1252,8 @@ body {
   }
 }
 
-@media only screen and (max-height: 100px) and (min-height: 0) {
-  main .about-section div {
+@media screen and (max-height: 100px) and (min-height: 0) {
+  main {
     margin-top: 18rem;
   }
   .action-name {
@@ -1267,7 +1261,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 1100px) and (min-width: 0px) {
+@media screen and (max-width: 1100px) and (min-width: 0px) {
   main .about-section div {
     display: block !important;
   }
@@ -1279,6 +1273,21 @@ body {
   }
   .feedback-list-admin li {
     width: 25rem;
+  }
+}
+
+@media only screen and (max-width: 350px) and (min-width: 0px) {
+  .contact-form .errors2 {
+    min-width: 10rem !important;
+  }
+  .contact-form input {
+    min-width: 10rem !important;
+  }
+  .contact-form #email_id {
+    min-width: 10rem !important;
+  }
+  .contact-form textarea {
+    min-width: 10rem !important;
   }
 }
 /*# sourceMappingURL=style.css.map */

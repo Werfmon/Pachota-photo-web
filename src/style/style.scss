@@ -10,6 +10,10 @@
     outline: none;
   }
 }
+input:-webkit-autofill, //please dont read this :)
+input:-webkit-autofill:focus {
+  transition: background-color 60000000000s 0s, color 60000000000s 0s;
+}
 body {
   min-height: 100vh;
   background-color: rgb(17, 17, 17);
@@ -66,7 +70,7 @@ body {
 .main-header {
   overflow-y: hidden;
 
-  background-color: rgba(10, 10, 10, 0.733);
+  background-color: rgba(0, 0, 0, 0.63);
   height: 5.5rem;
   .main-navigation {
     overflow-y: hidden;
@@ -107,33 +111,29 @@ body {
   grid-template: 25vw 25vh / 68%;
   color: rgb(255, 255, 255);
   font-size: 7vw;
-  p {
-    align-self: center;
-    text-align: center;
-    border-inline: rgb(255, 255, 255) solid 4px;
-    padding-inline: 0.5rem;
-    font-family: Arial, Helvetica, sans-serif;
-  }
   a {
     display: flex;
     justify-content: center;
   }
 }
+.pachota-photos-logo {
+  width: 200px;
+  height: 200px;
+}
+
 .click-about-icon {
-  margin-top: 2.7rem;
   transform: rotate(90deg);
-  justify-self: center;
   cursor: pointer;
   align-self: flex-end;
   position: relative;
   transition: top 2s, transform 0.7s;
-  top: 0;
+  top: 7rem;
   border-radius: 50%;
   &:hover {
     animation: svgArrowIconAnim 1.2s;
     animation-timing-function: ease;
     animation-fill-mode: both;
-    top: 2rem;
+    top: 12rem;
     transform: rotate(450deg);
   }
 }
@@ -183,7 +183,6 @@ body {
   z-index: -1;
   position: absolute;
   padding-top: 2rem;
-  height: 100%;
   width: 100%;
   color: #fff;
   background-color: rgb(17, 17, 17);
@@ -251,14 +250,14 @@ body {
       width: 100%;
 
       background-color: #111111;
-      .errors2{
-        min-width: 25rem;
+      .errors2 {
+        min-width: 20rem;
         width: 40%;
         border-inline: rgb(255, 255, 255) 5px solid;
         padding-left: 5px;
       }
       input {
-        min-width: 25rem;
+        min-width: 20rem;
         font-size: 1.5rem;
         color: #fff;
         padding: 10px;
@@ -268,8 +267,9 @@ body {
         background-color: rgba(124, 116, 116, 0);
         position: relative;
       }
+
       #email_id {
-        min-width: 25rem;
+        min-width: 20rem;
         border-radius: 5px 5px 0 0;
       }
       input[type="submit"] {
@@ -278,7 +278,7 @@ body {
         border-radius: 0 0 5px 5px;
       }
       textarea {
-        min-width: 25rem;
+        min-width: 20rem;
         width: 40%;
         display: block;
         background-color: rgba(255, 255, 255, 0);
@@ -295,7 +295,6 @@ body {
     }
     .contact-container {
       display: grid;
-      align-items: center;
       justify-content: center;
       grid-template: 5rem 5rem / repeat(1, auto);
       margin-top: 4rem;
@@ -491,8 +490,8 @@ body {
   margin-top: 4rem;
   cursor: pointer;
   font-size: 1rem;
-  transition:color 1s, background-color 1s;
-  &:hover{
+  transition: color 1s, background-color 1s;
+  &:hover {
     background-color: #ff0000;
     color: #fff;
   }
@@ -545,13 +544,13 @@ body {
   .add-cetegory-successful {
     text-align: center;
   }
-  .add-category-form-3{
+  .add-category-form-3 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 40vw;
     margin: 0 auto;
-    text-align: center; 
+    text-align: center;
     input[type="submit"] {
       color: #fff;
       align-self: flex-end;
@@ -568,8 +567,7 @@ body {
     }
   }
   .add-category-form,
-  .add-category-form-2
-   {
+  .add-category-form-2 {
     background-color: rgb(255, 255, 255);
     padding: 1rem;
     box-shadow: 1px 1px 5px 5px #cfcfcf, 4px -3px 1px 0 #ee1c00 inset;
@@ -591,7 +589,7 @@ body {
       box-shadow: 0px 5px 10px rgb(172, 172, 172);
       border: rgb(66, 66, 66) 2px solid;
       border-radius: 8px;
-      &::placeholder{
+      &::placeholder {
         color: rgb(88, 88, 88);
       }
     }
@@ -622,7 +620,7 @@ body {
       border: rgb(66, 66, 66) 2px solid;
       border-radius: 8px;
       &::placeholder {
-        color: rgb(88, 88, 88);;
+        color: rgb(88, 88, 88);
       }
     }
     input[type="submit"] {
@@ -637,22 +635,21 @@ body {
       text-align: center;
       width: 55%;
     }
-  .add-category-form-3 {
-    width: 40vw;
-    input {
-      width: 100%;
-      padding-left: 0.4rem;
-      margin-block: 1rem;
-      color: #fff;
-      box-shadow: 0px 5px 10px rgb(172, 172, 172);
-      border: rgb(255, 255, 255) 2px solid;
-      background-color: rgb(66, 66, 66);
-      border-radius: 8px;
-      &::placeholder {
-        color: rgb(218, 218, 218);
+    .add-category-form-3 {
+      width: 40vw;
+      input {
+        width: 100%;
+        padding-left: 0.4rem;
+        margin-block: 1rem;
+        color: #fff;
+        box-shadow: 0px 5px 10px rgb(172, 172, 172);
+        border: rgb(255, 255, 255) 2px solid;
+        background-color: rgb(66, 66, 66);
+        border-radius: 8px;
+        &::placeholder {
+          color: rgb(218, 218, 218);
+        }
       }
-    }
-   
     }
   }
   nav {
@@ -828,7 +825,7 @@ body {
     }
   }
 }
-@media only screen and (max-height: 500px) and (min-height: 0) {
+@media screen and (max-height: 500px) and (min-height: 0) {
   .second-list {
     height: 85vh;
     overflow-y: scroll;
@@ -850,43 +847,31 @@ body {
     }
   }
 }
-@media only screen and (max-height: 300px) and (min-height: 0) {
+@media screen and (max-height: 350px) and (min-height: 0) {
   main {
-    .about-section {
-      div {
-        margin-top: 10rem;
-      }
-    }
+    margin-top: 10rem;
   }
   .action-name {
     margin-top: 10rem;
   }
 }
-@media only screen and (max-height: 200px) and (min-height: 0) {
+@media screen and (max-height: 200px) and (min-height: 0) {
   main {
-    .about-section {
-      div {
-        margin-top: 15rem;
-      }
-    }
+    margin-top: 15rem;
   }
   .action-name {
     margin-top: 15rem;
   }
 }
-@media only screen and (max-height: 100px) and (min-height: 0) {
+@media screen and (max-height: 100px) and (min-height: 0) {
   main {
-    .about-section {
-      div {
-        margin-top: 18rem;
-      }
-    }
+    margin-top: 18rem;
   }
   .action-name {
     margin-top: 18rem;
   }
 }
-@media only screen and (max-width: 1100px) and (min-width: 0px) {
+@media screen and (max-width: 1100px) and (min-width: 0px) {
   main {
     .about-section {
       div {
@@ -903,6 +888,26 @@ body {
   .feedback-list-admin {
     li {
       width: 25rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 350px) and (min-width: 0px) {
+  @mixin size-form {
+    min-width: 10rem !important;
+  }
+  .contact-form {
+    .errors2 {
+      @include size-form;
+    }
+    input {
+      @include size-form;
+    }
+    #email_id {
+      @include size-form;
+    }
+    textarea {
+      @include size-form;
     }
   }
 }
