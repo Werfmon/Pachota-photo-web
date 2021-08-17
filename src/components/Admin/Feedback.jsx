@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import getCookie from '../getCookiesFnc';
 
 export default function Feedback() {
     const [feedbacks, setFeedbacks] = useState([]);
@@ -31,7 +32,7 @@ export default function Feedback() {
           method: "DELETE",
           headers: {
               "content-type": "application/json",
-              "x-access-token": localStorage.getItem('token'),
+              "x-access-token": getCookie('token'),
           },
           })
           .then((res) => {

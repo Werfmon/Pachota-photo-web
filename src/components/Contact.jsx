@@ -4,6 +4,7 @@ import ig from "../img/ig-logo.svg";
 import gmail from "../img/gmail-icon.svg";
 import { context } from '../App.jsx';
 import * as Yup from 'yup';
+import getCookie from "./getCookiesFnc";
 
 const ErrorMessages = Yup.object().shape({
   subject: Yup.string().required('Zadejte předmět'),
@@ -27,7 +28,7 @@ export default function Contact() {
             method: 'POST',
             headers: {
               'content-type': 'application/json',
-              'x-access-token': localStorage.getItem('token')
+              'x-access-token': getCookie('token')
             },
               body: JSON.stringify({email: values.email_id, subject: values.subject, message: values.field})
           })

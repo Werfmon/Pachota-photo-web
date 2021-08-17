@@ -1,5 +1,6 @@
 import React, { Fragment , useState} from 'react'
 import { Formik, Field, Form } from 'formik'
+import getCookie from '../getCookiesFnc';
 
 export default function AddCategory() {
     const [pictures, setPictures] = useState([]);
@@ -57,7 +58,7 @@ export default function AddCategory() {
                                     method: 'POST',
                                     headers: {
                                         'content-type': 'application/json',
-                                        'x-access-token': localStorage.getItem('token')
+                                        'x-access-token': getCookie('token')
                                     },
                                     body: JSON.stringify({ name: action, images: pictures })
                                 })

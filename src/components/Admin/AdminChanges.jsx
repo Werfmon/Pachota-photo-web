@@ -4,12 +4,13 @@ import AddCategory from './AddCategory.jsx'
 import DeleteCategory from './DeleteCategory.jsx'
 import Feedback from './Feedback'
 import { Switch, Route, NavLink, useRouteMatch } from 'react-router-dom'
+import getCookie from '../getCookiesFnc'
 
 function checkToken(component) {
-    return localStorage.getItem('token') && component;
+    return getCookie('token') && component;
 }
 function removeToken() {
-    localStorage.removeItem('token');
+    document.cookie = "token=;path=/";
     window.location.reload();
 }
 export default function AdminChanges() {

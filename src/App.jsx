@@ -19,7 +19,6 @@ export default function App() {
     }
     return err;
 }
-
   return (
     <ContextProvider value={validateEmail}>
       <Router>

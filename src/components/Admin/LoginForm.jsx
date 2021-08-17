@@ -34,7 +34,7 @@ export default function LoginForm() {
                             return res.json();
                         })
                         .then(data => {
-                            localStorage.setItem('token', data.token);
+                            document.cookie = `token=${data.token}; path=/`;
                             window.location.reload();
                         })
                         .catch(err => {
