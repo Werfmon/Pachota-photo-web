@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import arrow from "../img/arrow.svg";
 
 export default function Logo( props ) {
@@ -9,4 +11,7 @@ export default function Logo( props ) {
             </a>
         </div>
     )
+}
+Logo.propTypes = {
+    class: PropTypes.string.isRequired
 }

@@ -1,12 +1,12 @@
 import React, { useState, Fragment } from "react";
 import { IconButton, withStyles } from "@material-ui/core";
 
-import menu from "../img/menu.svg";
-import pachotalogo from '../img/logo_pachota_photos.png'
-
 import ListItem from './ListItem.jsx'
 import SwitchChange from "./SwitchChange.jsx";
 import Logo from './Logo.jsx'
+
+import menu from "../img/menu.svg";
+import pachotalogo from '../img/logo_pachota_photos.png'
 
 const MyIconButton = withStyles((theme) => ({
   root: {

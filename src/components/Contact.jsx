@@ -1,9 +1,12 @@
 import React, {useContext } from "react";
+
 import { Formik, Form, Field } from "formik";
+import * as Yup from 'yup';
+
+import { context } from '../App.jsx';
+
 import ig from "../img/ig-logo.svg";
 import gmail from "../img/gmail-icon.svg";
-import { context } from '../App.jsx';
-import * as Yup from 'yup';
 
 const ErrorMessages = Yup.object().shape({
   subject: Yup.string().required('Zadejte předmět'),

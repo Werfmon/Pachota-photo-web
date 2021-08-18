@@ -1,5 +1,6 @@
 import React, { Fragment, createContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import PropTypes from 'prop-types'
 
 import BackButton from "./components/BackButton.jsx";
 import Header from "./components/Header.jsx";
@@ -37,4 +38,7 @@ export default function App() {
       </Router>
     </ContextProvider>
   );
+}
+ContextProvider.propTypes = {
+  value: PropTypes.func.isRequired
 }

@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
 
 export default function Image({link, description}) { 
     return (
@@ -8,3 +9,8 @@ export default function Image({link, description}) {
         </Fragment>
     )
 }
+Image.propTypes = {
+    link: PropTypes.string.isRequired,
+    description: PropTypes.string
+}
+
