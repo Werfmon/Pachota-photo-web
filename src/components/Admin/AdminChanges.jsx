@@ -20,7 +20,7 @@ export default function AdminChanges() {
     
     function navOpen() {
         let nav_class = document.getElementById('nav_admin_id');
-        nav_class.classList.toggle('admin-change-js'); 
+        nav_class.classList.toggle('admin-change-js');
         if(state) {
             setState(false)
             document.getElementById('nav_admin_id').style.display = "none"

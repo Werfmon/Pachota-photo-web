@@ -20,7 +20,7 @@ export default function LoginForm() {
                         login_password: '',
                     }}
                     onSubmit={values => {
-                        fetch('https://pachota-photo-backend.herokuapp.com/auth/login', {
+                        fetch('https://pachota-backend.herokuapp.com/auth/login', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json',

@@ -5,7 +5,7 @@ export default function DeleteCategory() {
   const [data, setData] = useState([]);
   const [remove, setRemove] = useState([]);
   useEffect(() => {
-    fetch("https://pachota-photo-backend.herokuapp.com/api/actions", {
+    fetch("https://pachota-backend.herokuapp.com/api/actions", {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -29,7 +29,7 @@ export default function DeleteCategory() {
   function uploadToDB() {
       for(let i = 0;i < remove.length;i++){
           console.log(remove[i]);
-          fetch(`https://pachota-photo-backend.herokuapp.com/api/action/${remove[i]}`, {
+          fetch(`https://pachota-backend.herokuapp.com/api/action/${remove[i]}`, {
         method: "DELETE",
         headers: {
             "content-type": "application/json",

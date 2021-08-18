@@ -54,7 +54,7 @@ export default function AddCategory() {
                                 document.getElementById('link_picture_add').value = '';
                                 document.getElementById('description_picture_add').value = ''; 
 
-                                fetch('https://pachota-photo-backend.herokuapp.com/api/action', {
+                                fetch('https://pachota-backend.herokuapp.com/api/action', {
                                     method: 'POST',
                                     headers: {
                                         'content-type': 'application/json',

@@ -6,7 +6,7 @@ export default function Feedback() {
     const [remove, setRemove] = useState([]);
 
     useEffect(() => {
-        fetch("https://pachota-photo-backend.herokuapp.com/api/feedbacks", {
+        fetch("https://pachota-backend.herokuapp.com/api/feedbacks", {
             method: "GET",
             headers: {
                 "content-type": "application/json",
@@ -28,7 +28,7 @@ export default function Feedback() {
     function uploadToDB() {
         for(let i = 0;i < remove.length;i++){
             console.log(remove[i]);
-            fetch(`https://pachota-photo-backend.herokuapp.com/api/feedback/${remove[i]}`, {
+            fetch(`https://pachota-backend.herokuapp.com/api/feedback/${remove[i]}`, {
           method: "DELETE",
           headers: {
               "content-type": "application/json",

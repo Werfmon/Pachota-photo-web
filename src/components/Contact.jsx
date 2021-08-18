@@ -4,7 +4,6 @@ import ig from "../img/ig-logo.svg";
 import gmail from "../img/gmail-icon.svg";
 import { context } from '../App.jsx';
 import * as Yup from 'yup';
-import getCookie from "./getCookiesFnc";
 
 const ErrorMessages = Yup.object().shape({
   subject: Yup.string().required('Zadejte předmět'),
@@ -24,11 +23,11 @@ export default function Contact() {
         }}
         onSubmit={(values) => {
           
-          fetch('https://pachota-photo-backend.herokuapp.com/api/feedback', {
+          fetch('https://pachota-backend.herokuapp.com/api/feedback', {
             method: 'POST',
             headers: {
               'content-type': 'application/json',
-              'x-access-token': getCookie('token')
+              
             },
               body: JSON.stringify({email: values.email_id, subject: values.subject, message: values.field})
           })
@@ -37,9 +36,11 @@ export default function Contact() {
               throw new Error("invalid Upload");
             }
           })
-          .catch(err => console.error(err));
-         
-          window.location.reload()
+          .catch(err => console.error(err))
+          .finally(() => {
+            window.location.reload();
+          });
+          
         }}
         validationSchema={ErrorMessages}
         >

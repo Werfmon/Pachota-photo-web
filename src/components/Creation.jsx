@@ -6,7 +6,7 @@ export default function Creation() {
 
 
   useEffect(() => {
-    fetch("https://pachota-photo-backend.herokuapp.com/api/actions", {
+    fetch("https://pachota-backend.herokuapp.com/api/actions", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -29,16 +29,20 @@ export default function Creation() {
           <div className='image-container'>
             <ul className='first-part-gallery'>
               {action.images.filter(image => image.id % 2 !== 0).map((image) => (
-                <li key={image.id}>
-                  <Image link={image.link} description={image.description} />
-                </li>
+                <a href={image.link}>
+                  <li key={image.id}>
+                    <Image link={image.link} description={image.description} />
+                  </li>
+                </a>
               ))}
             </ul>
             <ul className='second-part-gallery'>
               {action.images.filter(image => image.id % 2 === 0).map((image) => (
+              <a href={image.link}>
                 <li key={image.id}>
                   <Image link={image.link} description={image.description} />
                 </li>
+              </a>
               ))}
             </ul>
           </div>
