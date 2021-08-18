@@ -1,6 +1,8 @@
 import React, { Fragment }from 'react'
-import Favicon from 'react-favicon'
 import ReactDOM from 'react-dom'
+
+import Favicon from 'react-favicon'
+
 import App from './App.jsx'
 
 import favicon from './img/camera.svg'

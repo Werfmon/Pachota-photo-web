@@ -35,8 +35,8 @@ body {
   background-position: center;
   height: 100vh;
   min-height: 28rem;
-  -webkit-box-shadow: 0 -250px 150px 0 #0f0f0f inset;
-          box-shadow: 0 -250px 150px 0 #0f0f0f inset;
+  -webkit-box-shadow: 0 -250px 180px 0 #070707 inset;
+          box-shadow: 0 -250px 180px 0 #070707 inset;
 }
 
 .img-fotograf {

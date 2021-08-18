@@ -1,7 +1,8 @@
 import React from 'react'
+
 import getCookie from '../getCookiesFnc'
-import AdminChanges from './AdminChanges'
-import LoginForm from './LoginForm'
+import AdminChanges from './AdminChanges.jsx'
+import LoginForm from './LoginForm.jsx'
 
 
 export default function Admin() {
