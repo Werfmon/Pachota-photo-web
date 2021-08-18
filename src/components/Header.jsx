@@ -34,6 +34,7 @@ export default function Header() {
      setBoolChange(true);
     }
   }
+  
   if (state <= 730) {
     return (
       <div className="sec-body">
@@ -65,6 +66,7 @@ export default function Header() {
         </div>
     );
   } else {
+    document.body.style.overflow = "visible";
     return (
       <Fragment>
         <div className="sec-body">
