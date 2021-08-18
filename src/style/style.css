@@ -28,15 +28,15 @@ body {
 
 .sec-body {
   overflow-y: visible;
-  background-image: url("../img/humen-header-photo.jpg");
+  background-image: url("../img/human-header-photo.jpg");
   background-clip: border-box;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
   min-height: 28rem;
-  -webkit-box-shadow: 0 -250px 150px 0 #111111 inset;
-          box-shadow: 0 -250px 150px 0 #111111 inset;
+  -webkit-box-shadow: 0 -250px 150px 0 #0f0f0f inset;
+          box-shadow: 0 -250px 150px 0 #0f0f0f inset;
 }
 
 .img-fotograf {

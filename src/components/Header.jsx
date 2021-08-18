@@ -70,20 +70,19 @@ export default function Header() {
     return (
       <Fragment>
         <div className="sec-body">
-
-      <header className="main-header">
-        <nav className="main-navigation">
-          <ul>
-            <img src={pachotalogo} alt="logo" title='logo' className='pachota-photos-logo' />
-          </ul>
-          <ul className="second-list">
-            <ListItem to='about' text='O mně' class="main-nav-link"/>
-            <ListItem to='creation' text='Tvorba' class="main-nav-link"/>
-            <ListItem to='contact' text='Kontakt' class="main-nav-link"/>
-          </ul>
-        </nav>
-      </header>
-        <Logo class='main-logo'/>
+          <header className="main-header">
+            <nav className="main-navigation">
+              <ul>
+                <img src={pachotalogo} alt="logo" title='logo' className='pachota-photos-logo' />
+              </ul>
+              <ul className="second-list">
+                <ListItem to='about' text='O mně' class="main-nav-link"/>
+                <ListItem to='creation' text='Tvorba' class="main-nav-link"/>
+                <ListItem to='contact' text='Kontakt' class="main-nav-link"/>
+              </ul>
+            </nav>
+          </header>
+          <Logo class='main-logo'/>
         </div>
         <SwitchChange />
       </Fragment>
