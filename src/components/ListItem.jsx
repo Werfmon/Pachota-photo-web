@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 export default function ListItem(props) {
     return (
         <li>
-            <Link to={`/${props.to}`} className={props.class} onClick={props.delOverflow} >{props.text}</Link>
+            <Link to={`/${props.to}`} className={props.class} onClick={props.delOverflow}>{props.text}</Link>
         </li>
     )
 }

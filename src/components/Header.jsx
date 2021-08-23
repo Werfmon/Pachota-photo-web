@@ -39,7 +39,6 @@ export default function Header() {
   if (state <= 730) {
     return (
       <div className="sec-body">
-
         {boolChange ? (
           <div>
             <header className="burger-header">
@@ -49,7 +48,7 @@ export default function Header() {
               <Logo class='main-logo-burger' />
             </header>
             <SwitchChange />
-            </div>
+          </div>
         ) : (
           <header className="burger-container">
             <MyIconButton onClick={openBurgerMenu}>
@@ -64,7 +63,7 @@ export default function Header() {
             </nav>
           </header>
         )}
-        </div>
+      </div>
     );
   } else {
     document.body.style.overflow = "visible";
@@ -74,7 +73,7 @@ export default function Header() {
           <header className="main-header">
             <nav className="main-navigation">
               <ul>
-                <img src={pachotalogo} alt="logo" title='logo' className='pachota-photos-logo' />
+               <li><img src={pachotalogo} alt="logo" title='logo' className='pachota-photos-logo' /></li>
               </ul>
               <ul className="second-list">
                 <ListItem to='about' text='O mně' class="main-nav-link"/>

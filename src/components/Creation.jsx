@@ -5,7 +5,6 @@ import Image from './Image'
 export default function Creation() {
   const [actions, setActions] = useState([]);
 
-
   useEffect(() => {
     fetch("https://pachota-backend.herokuapp.com/api/actions", {
       method: "GET",

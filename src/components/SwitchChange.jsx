@@ -13,6 +13,6 @@ export default function SwitchChange() {
           <Route path="/creation" render={() => <Creation />}></Route>
           <Route path="/contact" render={() => <Contact/>}></Route>
           <Route path="/"></Route>
-        </Switch>
+      </Switch>
     )
   }
