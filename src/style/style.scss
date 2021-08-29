@@ -131,28 +131,8 @@ body {
   top: 7rem;
   border-radius: 50%;
   &:hover {
-    animation: svgArrowIconAnim 1.2s;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
     top: 12rem;
     transform: rotate(450deg);
-  }
-}
-@keyframes svgArrowIconAnim {
-  $myAnimaBorder: 3px;
-  0% {
-    border-left: #fff solid $myAnimaBorder;
-  }
-  25% {
-    border-left: #fff solid $myAnimaBorder;
-    border-top: #fff solid $myAnimaBorder;
-  }
-  50% {
-    border-top: #fff solid $myAnimaBorder;
-    border-inline: #fff solid $myAnimaBorder;
-  }
-  100% {
-    border: #fff solid $myAnimaBorder;
   }
 }
 .myIconButton {
@@ -713,6 +693,20 @@ body {
   color: #fff;
   font-size: 4rem;
   margin-top: 4rem;
+}
+.google-disk-href{
+  margin-top: 2.4rem;
+  width: 100%;
+  text-align: center;
+  span{
+    color: #DF1400;
+    text-decoration: underline;
+  }
+  a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: #fff;
+  }
 }
 .image-container {
   max-width: 1200px;

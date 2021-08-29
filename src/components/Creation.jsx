@@ -23,6 +23,9 @@ export default function Creation() {
 
   return (
     <main id='main'>
+      <div className='google-disk-href'>
+        <a rel='noreferrer' href="https://drive.google.com/drive/folders/1XDJPZAdDZtoLT_huN2LUO-cQm-hfzcme?usp=sharing" target="_blank">Všechny fotky najdete <span>zde!</span> </a>
+      </div>
       { actions.map(action => (
         <div key={action.id}>
           <h1 className='action-name'>{action.name}</h1>

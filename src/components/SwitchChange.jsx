@@ -9,10 +9,9 @@ import Creation from './Creation.jsx'
 export default function SwitchChange() {
     return  (
       <Switch>
-          <Route path="/about" render={() => <About />}></Route>
           <Route path="/creation" render={() => <Creation />}></Route>
           <Route path="/contact" render={() => <Contact/>}></Route>
-          <Route path="/"></Route>
+          <Route path="/" render={() => <About />}></Route>
       </Switch>
     )
   }

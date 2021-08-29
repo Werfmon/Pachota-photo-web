@@ -183,49 +183,9 @@ body {
 }
 
 .click-about-icon:hover {
-  -webkit-animation: svgArrowIconAnim 1.2s;
-          animation: svgArrowIconAnim 1.2s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
   top: 12rem;
   -webkit-transform: rotate(450deg);
           transform: rotate(450deg);
-}
-
-@-webkit-keyframes svgArrowIconAnim {
-  0% {
-    border-left: #fff solid 3px;
-  }
-  25% {
-    border-left: #fff solid 3px;
-    border-top: #fff solid 3px;
-  }
-  50% {
-    border-top: #fff solid 3px;
-    border-inline: #fff solid 3px;
-  }
-  100% {
-    border: #fff solid 3px;
-  }
-}
-
-@keyframes svgArrowIconAnim {
-  0% {
-    border-left: #fff solid 3px;
-  }
-  25% {
-    border-left: #fff solid 3px;
-    border-top: #fff solid 3px;
-  }
-  50% {
-    border-top: #fff solid 3px;
-    border-inline: #fff solid 3px;
-  }
-  100% {
-    border: #fff solid 3px;
-  }
 }
 
 .myIconButton {
@@ -1058,6 +1018,23 @@ body {
   color: #fff;
   font-size: 4rem;
   margin-top: 4rem;
+}
+
+.google-disk-href {
+  margin-top: 2.4rem;
+  width: 100%;
+  text-align: center;
+}
+
+.google-disk-href span {
+  color: #DF1400;
+  text-decoration: underline;
+}
+
+.google-disk-href a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #fff;
 }
 
 .image-container {
