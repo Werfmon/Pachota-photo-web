@@ -1020,23 +1020,6 @@ body {
   margin-top: 4rem;
 }
 
-.google-disk-href {
-  margin-top: 2.4rem;
-  width: 100%;
-  text-align: center;
-}
-
-.google-disk-href span {
-  color: #DF1400;
-  text-decoration: underline;
-}
-
-.google-disk-href a {
-  text-decoration: none;
-  font-size: 2rem;
-  color: #fff;
-}
-
 .loading {
   text-align: center;
   margin-block: 2rem;
