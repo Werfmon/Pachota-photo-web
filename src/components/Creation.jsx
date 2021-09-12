@@ -23,9 +23,6 @@ export default function Creation() {
 
   return (
     <main id='main'>
-      <div className='google-disk-href'>
-        <a rel='noreferrer' href="https://drive.google.com/drive/folders/1XDJPZAdDZtoLT_huN2LUO-cQm-hfzcme?usp=sharing" target="_blank">Všechny fotky najdete <span>zde!</span> </a>
-      </div>
       {!actions[0] && <p className='loading'>Loading...</p>}
       { actions.map(action => (
         <p>Loading...</p> &&
